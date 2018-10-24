@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ABCLogisticsShippingDB_TargetModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ABCLogisticsShippingDB_TargetModelStoreContainer">
+          <EntitySet Name="activity" EntityType="ABCLogisticsShippingDB_TargetModel.Store.activity" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="activity">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="hbillno" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="origairp" Type="varchar" MaxLength="50" />
+          <Property Name="destairp" Type="varchar" MaxLength="50" />
+          <Property Name="shipdept" Type="varchar" MaxLength="50" />
+          <Property Name="shipref" Type="varchar" MaxLength="50" />
+          <Property Name="recname" Type="varchar" MaxLength="50" />
+          <Property Name="recaddr" Type="varchar" MaxLength="50" />
+          <Property Name="recaddr1" Type="varchar" MaxLength="50" />
+          <Property Name="reccity" Type="varchar" MaxLength="50" />
+          <Property Name="recstate" Type="varchar" MaxLength="50" />
+          <Property Name="reczip" Type="varchar" MaxLength="50" />
+          <Property Name="recnotify" Type="varchar" MaxLength="50" />
+          <Property Name="specinstr" Type="varchar" MaxLength="50" />
+          <Property Name="instrdesc" Type="varchar" MaxLength="50" />
+          <Property Name="pieces" Type="numeric" />
+          <Property Name="desc1" Type="varchar" MaxLength="50" />
+          <Property Name="weight" Type="numeric" />
+          <Property Name="shipsign" Type="varchar" MaxLength="50" />
+          <Property Name="shipsigndt" Type="datetime" />
+          <Property Name="totchgs" Type="numeric" Scale="2" />
+          <Property Name="shiptime" Type="varchar" MaxLength="50" />
+          <Property Name="station" Type="varchar" MaxLength="50" />
+          <Property Name="shiptele" Type="varchar" MaxLength="50" />
+          <Property Name="onsite" Type="datetime" />
+          <Property Name="hot" Type="varchar" MaxLength="50" />
+          <Property Name="company" Type="varchar" MaxLength="50" />
+          <Property Name="contact" Type="varchar" MaxLength="50" />
+          <Property Name="address1" Type="varchar" MaxLength="50" />
+          <Property Name="city" Type="varchar" MaxLength="50" />
+          <Property Name="state" Type="varchar" MaxLength="50" />
+          <Property Name="zip" Type="varchar" MaxLength="50" />
+          <Property Name="servdesc" Type="varchar" MaxLength="50" />
+          <Property Name="accountno" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="itar" Type="bit" />
+          <Property Name="carnet" Type="varchar" MaxLength="50" />
+          <Property Name="creditcard_option" Type="varchar" MaxLength="200" />
+          <Property Name="creditcard_number" Type="varchar" MaxLength="50" />
+          <Property Name="employeeid" Type="varchar" MaxLength="20" />
+          <Property Name="dim_weight" Type="numeric" />
+          <Property Name="miles" Type="numeric" Precision="10" Scale="2" />
+          <Property Name="invoice_type" Type="varchar" MaxLength="50" />
+          <Property Name="invoice_number" Type="varchar" MaxLength="50" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ABCLogisticsShippingDB_TargetModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="ABCLogisticsShippingDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="activities" EntityType="ABCLogisticsShippingDB_TargetModel.activity" />
+        </EntityContainer>
+        <EntityType Name="activity">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="hbillno" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="origairp" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="destairp" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="shipdept" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="shipref" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="recname" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="recaddr" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="recaddr1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="reccity" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="recstate" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="reczip" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="recnotify" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="specinstr" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="instrdesc" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="pieces" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="desc1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="weight" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="shipsign" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="shipsigndt" Type="DateTime" />
+          <Property Name="totchgs" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="shiptime" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="station" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="shiptele" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="onsite" Type="DateTime" />
+          <Property Name="hot" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="company" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="contact" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="address1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="city" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="state" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="zip" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="servdesc" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="accountno" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="itar" Type="Boolean" />
+          <Property Name="carnet" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="creditcard_option" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="creditcard_number" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="employeeid" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Type="Decimal" Name="dim_weight" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="miles" Precision="10" Scale="2" />
+          <Property Type="String" Name="invoice_type" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="invoice_number" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ABCLogisticsShippingDB_TargetModelStoreContainer" CdmEntityContainer="ABCLogisticsShippingDBEntities">
+          <EntitySetMapping Name="activities">
+            <EntityTypeMapping TypeName="ABCLogisticsShippingDB_TargetModel.activity">
+              <MappingFragment StoreEntitySet="activity">
+                <ScalarProperty Name="invoice_number" ColumnName="invoice_number" />
+                <ScalarProperty Name="invoice_type" ColumnName="invoice_type" />
+                <ScalarProperty Name="miles" ColumnName="miles" />
+                <ScalarProperty Name="dim_weight" ColumnName="dim_weight" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="hbillno" ColumnName="hbillno" />
+                <ScalarProperty Name="origairp" ColumnName="origairp" />
+                <ScalarProperty Name="destairp" ColumnName="destairp" />
+                <ScalarProperty Name="shipdept" ColumnName="shipdept" />
+                <ScalarProperty Name="shipref" ColumnName="shipref" />
+                <ScalarProperty Name="recname" ColumnName="recname" />
+                <ScalarProperty Name="recaddr" ColumnName="recaddr" />
+                <ScalarProperty Name="recaddr1" ColumnName="recaddr1" />
+                <ScalarProperty Name="reccity" ColumnName="reccity" />
+                <ScalarProperty Name="recstate" ColumnName="recstate" />
+                <ScalarProperty Name="reczip" ColumnName="reczip" />
+                <ScalarProperty Name="recnotify" ColumnName="recnotify" />
+                <ScalarProperty Name="specinstr" ColumnName="specinstr" />
+                <ScalarProperty Name="instrdesc" ColumnName="instrdesc" />
+                <ScalarProperty Name="pieces" ColumnName="pieces" />
+                <ScalarProperty Name="desc1" ColumnName="desc1" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="shipsign" ColumnName="shipsign" />
+                <ScalarProperty Name="shipsigndt" ColumnName="shipsigndt" />
+                <ScalarProperty Name="totchgs" ColumnName="totchgs" />
+                <ScalarProperty Name="shiptime" ColumnName="shiptime" />
+                <ScalarProperty Name="station" ColumnName="station" />
+                <ScalarProperty Name="shiptele" ColumnName="shiptele" />
+                <ScalarProperty Name="onsite" ColumnName="onsite" />
+                <ScalarProperty Name="hot" ColumnName="hot" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="contact" ColumnName="contact" />
+                <ScalarProperty Name="address1" ColumnName="address1" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="zip" ColumnName="zip" />
+                <ScalarProperty Name="servdesc" ColumnName="servdesc" />
+                <ScalarProperty Name="accountno" ColumnName="accountno" />
+                <ScalarProperty Name="itar" ColumnName="itar" />
+                <ScalarProperty Name="carnet" ColumnName="carnet" />
+                <ScalarProperty Name="creditcard_option" ColumnName="creditcard_option" />
+                <ScalarProperty Name="creditcard_number" ColumnName="creditcard_number" />
+                <ScalarProperty Name="employeeid" ColumnName="employeeid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ABCLogisticsShippingModel" ZoomLevel="122">
+        <EntityTypeShape EntityType="ABCLogisticsShippingDB_TargetModel.activity" Width="1.5" PointX="0.75" PointY="0.75" Height="8.51853515625" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

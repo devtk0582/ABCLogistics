@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/HAWBUtilityTool/.vs/ABCLogisticsUtilityTools/v15/Server/sqlite3
+/HAWBUtilityTool/ABCLogisticsUtilityToolBusinessLogic/bin
+/HAWBUtilityTool/ABCLogisticsUtilityToolBusinessLogic/obj
+/HAWBUtilityTool/ABCLogisticsUtilityTools/bin
+/HAWBUtilityTool/ABCLogisticsUtilityTools/obj/x86
+/HAWBUtilityTool/obj
