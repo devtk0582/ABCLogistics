@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FFM" Class="FFMCloudDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=&quot;184.106.188.147, 1433&quot;;Initial Catalog=FFM;Persist Security Info=True;User ID=ABCLogisticsWebsite" SettingsObjectName="ABCLogisticsCloudDatabaseApp.Properties.Settings" SettingsPropertyName="FFMConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.LAXProviders" Member="LAXProviders">
+    <Type Name="LAXProvider">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[Account Number]" Member="Account_Number" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Addr1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Addr2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Addr3" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Ext" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Toll Free]" Member="Toll_Free" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Time Zone]" Member="Time_Zone" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Rate Signed]" Member="Rate_Signed" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Primary]" Member="Primary" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FFM_Accessorials" Member="FFM_Accessorials">
+    <Type Name="FFM_Accessorial">
+      <Column Name="Accessorial_ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProviderID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Min_Flat" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Rate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ChargeType_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hours_Start" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Hours_End" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="AccDesc_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Inclusion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Incremental_Rate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Increment_Range" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CustomerNo" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="FFM_Provider_FFM_Accessorial" Member="FFM_Provider" ThisKey="ProviderID" OtherKey="ProviderID" Type="FFM_Provider" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FFM_Providers" Member="FFM_Providers">
+    <Type Name="FFM_Provider">
+      <Column Name="ProviderID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AccountID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TimeZone" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Business_Hrs_Start" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Business_Hrs_End" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Rates_Signed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PrimaryFlag" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BusinessTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Email" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Fax" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AccountNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Terminal" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MasterTerminal" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="FFM_Provider_FFM_Accessorial" Member="FFM_Accessorials" ThisKey="ProviderID" OtherKey="ProviderID" Type="FFM_Accessorial" />
+    </Type>
+  </Table>
+  <Function Name="dbo.SP_FFM_InsertProviderDetails" Method="SP_FFM_InsertProviderDetails">
+    <Parameter Name="AccountID" Parameter="accountID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AccountNo" Parameter="accountNo" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Address1" Parameter="address1" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Address2" Parameter="address2" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Address3" Parameter="address3" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="State" Parameter="state" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Postal" Parameter="postal" Type="System.String" DbType="NVarChar(15)" />
+    <Parameter Name="Country" Parameter="country" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Telephone" Parameter="telephone" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="PhoneExt" Parameter="phoneExt" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="Fax" Parameter="fax" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="TollFree" Parameter="tollFree" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="SortName" Parameter="sortName" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="SortAddress" Parameter="sortAddress" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="Active" Parameter="active" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="TimeZone" Parameter="timeZone" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BHS" Parameter="bHS" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="BHE" Parameter="bHE" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Flag" Parameter="flag" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="ProviderID" Parameter="providerID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="BTypeId" Parameter="bTypeId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="bRateSigned" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="bPrimary" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="bEmail" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="bFax" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="userId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_FFM_InsertProviderDetailsResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

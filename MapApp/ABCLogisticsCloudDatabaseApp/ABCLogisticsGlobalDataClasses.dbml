@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ABCLogistics_Global" Class="ABCLogisticsGlobalDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=184.106.188.147,1433;Initial Catalog=ABCLogistics_Global;Persist Security Info=True;User ID=ABCLogisticsWebsite" SettingsObjectName="ABCLogisticsCloudDatabaseApp.Properties.Settings" SettingsPropertyName="ABCLogistics_GlobalConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Accounts" Member="Accounts">
+    <Type Name="Account">
+      <Column Name="AccountID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AccountNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Postal" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Telephone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PhoneExt" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TollFree" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DateUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SortName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SortAddress" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Address3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TimeZone" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Account_MasterPro" Member="MasterPros" ThisKey="AccountID" OtherKey="AgentID" Type="MasterPro" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Address" Member="Addresses">
+    <Type Name="Address">
+      <Column Name="AddressID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Street" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Street2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PrimaryContactName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PrimaryContactPhone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PrimaryContactEmail" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SecondaryContactName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SecondaryContactPhone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="SecondaryContactEmail" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Street3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AccountNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Address_ShipmentAddress" Member="ShipmentAddresses" ThisKey="AddressID" OtherKey="ShipperAddress" Type="ShipmentAddress" />
+      <Association Name="Address_PUAlert" Member="PUAlerts" ThisKey="AddressID" OtherKey="AgentAddress" Type="PUAlert" />
+      <Association Name="Address_PUAlert1" Member="PUAlerts1" ThisKey="AddressID" OtherKey="PickupFrom" Type="PUAlert" />
+      <Association Name="Address_PUAlert2" Member="PUAlerts2" ThisKey="AddressID" OtherKey="DeliveryTo" Type="PUAlert" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Shipments" Member="Shipments">
+    <Type Name="Shipment">
+      <Column Name="ShipmentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HAWB" Type="System.String" DbType="VarChar(36)" CanBeNull="true" />
+      <Column Name="ABCLogisticsTracking" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ShipperID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ShipperAttn" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ShipperPhone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ConsigneeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ConsigneeAttn" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ConsigneePhone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ThdPartyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ThdPartyAttn" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ThdPartyPhone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="BillTo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NotifyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NotifyAttn" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="NotifyPhone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="InvToID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SplitCode" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="SplitLocation" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="Terminal" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="DeclaredValue" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Insurance" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="CustomsValue" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="CODType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SalesCode1" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="SalesCode2" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="ServiceLevel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TransportMode" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="ChargeWeight" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalCharge" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="TotalCosts" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="DimFactor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AddTime" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IsGovt" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsQuote" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SpecialInstructions" Type="System.String" DbType="NVarChar(600)" CanBeNull="true" />
+      <Column Name="PUArea" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DELArea" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="AES" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="FTRExemptions" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DRInfo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NextStatusDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NoFuelSurcharge" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsInvoiced" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PickupDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MasterTerminal" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Association Name="Shipment_PUAlert" Member="PUAlerts" ThisKey="ShipmentID" OtherKey="ShipmentID" Type="PUAlert" />
+      <Association Name="Shipment_AirGND" Member="AirGNDs" ThisKey="ShipmentID" OtherKey="ShipmentID" Type="AirGND" />
+      <Association Name="Shipment_ShipmentMasterPro" Member="ShipmentMasterPros" ThisKey="ShipmentID" OtherKey="ShipmentID" Type="ShipmentMasterPro" />
+      <Association Name="Shipment_Dim" Member="Dims" ThisKey="ShipmentID" OtherKey="ShipmentID" Type="Dim" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ShipmentAddress" Member="ShipmentAddresses">
+    <Type Name="ShipmentAddress">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ShipmentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ShipperAddress" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ConsigneeAddress" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ThirdPartyAddress" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NotifyAddress" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InvToID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Address_ShipmentAddress" Member="Address" ThisKey="ShipperAddress" OtherKey="AddressID" Type="Address" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PUAlerts" Member="PUAlerts">
+    <Type Name="PUAlert">
+      <Column Name="PUAlertID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ShipmentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AgentAddress" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PickupFrom" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DeliveryTo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ScheduleDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FreightReady" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MBDDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CloseTime" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HT" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="PUAlert_Dim" Member="Dims" ThisKey="PUAlertID" OtherKey="AlertID" Type="Dim" />
+      <Association Name="Address_PUAlert" Member="Address" ThisKey="AgentAddress" OtherKey="AddressID" Type="Address" IsForeignKey="true" />
+      <Association Name="Address_PUAlert1" Member="Address1" ThisKey="PickupFrom" OtherKey="AddressID" Type="Address" IsForeignKey="true" />
+      <Association Name="Address_PUAlert2" Member="Address2" ThisKey="DeliveryTo" OtherKey="AddressID" Type="Address" IsForeignKey="true" />
+      <Association Name="Shipment_PUAlert" Member="Shipment" ThisKey="ShipmentID" OtherKey="ShipmentID" Type="Shipment" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AirGND" Member="AirGNDs">
+    <Type Name="AirGND">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ShipmentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Origin" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Destination" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="AirOrGnd" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Shipment_AirGND" Member="Shipment" ThisKey="ShipmentID" OtherKey="ShipmentID" Type="Shipment" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ShipmentSpecialServices" Member="ShipmentSpecialServices">
+    <Type Name="ShipmentSpecialService">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ShipmentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SpecialServiceID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ServiceCode" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MasterPro" Member="MasterPros">
+    <Type Name="MasterPro">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MAWB" Type="System.String" DbType="VarChar(36) NOT NULL" CanBeNull="false" />
+      <Column Name="Carrier" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="Pro" Type="System.String" DbType="VarChar(24)" CanBeNull="true" />
+      <Column Name="ETA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Departure" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AgentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Pieces" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Weight" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Kilos" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="FLTDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Account_MasterPro" Member="Account" ThisKey="AgentID" OtherKey="AccountID" Type="Account" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ShipmentMasterPro" Member="ShipmentMasterPros">
+    <Type Name="ShipmentMasterPro">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ShipmentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MAWB" Type="System.String" DbType="VarChar(36) NOT NULL" CanBeNull="false" />
+      <Association Name="Shipment_ShipmentMasterPro" Member="Shipment" ThisKey="ShipmentID" OtherKey="ShipmentID" Type="Shipment" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Dims" Member="Dims">
+    <Type Name="Dim">
+      <Column Name="DimID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ShipmentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Pieces" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Height" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Length" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Width" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Pounds" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Kilos" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="UOM" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="UOW" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="AlertID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="PUAlert_Dim" Member="PUAlert" ThisKey="AlertID" OtherKey="PUAlertID" Type="PUAlert" IsForeignKey="true" />
+      <Association Name="Shipment_Dim" Member="Shipment" ThisKey="ShipmentID" OtherKey="ShipmentID" Type="Shipment" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

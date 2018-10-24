@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 11.5" name="ABCLogisticsMapDataClasses">
+  <DataContextMoniker Name="/ABCLogisticsMapDataClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="6fd335ac-5977-4795-8c98-3ddc2ce07db5" absoluteBounds="0.75, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/ABCLogisticsMapDataClassesDataContext/ProviderZip" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e0eeef68-7a1a-4ce1-b27a-3e57fe0b0799" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ee54cc6e-cdfc-4385-bd57-fe6bc82031fe" absoluteBounds="1.375, 3.5, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/ABCLogisticsMapDataClassesDataContext/ProviderDistance" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c65c15f0-9900-4301-97d4-fd0a364bdf19" absoluteBounds="1.3900000000000001, 3.96, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c68766ca-ed1c-4aca-8993-ede187be8ebd" absoluteBounds="3.875, 1.125, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/ABCLogisticsMapDataClassesDataContext/ShipToZip" />
+      <nestedChildShapes>
+        <elementListCompartment Id="efcf3ce5-16cc-45df-b375-69606acf568f" absoluteBounds="3.89, 1.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5035c24d-f738-436d-ad61-6b03c578f2ac" absoluteBounds="4.375, 6.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/ABCLogisticsMapDataClassesDataContext/ZipCodeGeoCode" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0029f394-796c-47b3-a745-37bffcad73f3" absoluteBounds="4.39, 7.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fa1a1297-d54a-43b4-9867-73c3039539d4" absoluteBounds="1.125, 8.875, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/ABCLogisticsMapDataClassesDataContext/NeedMile" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0b87768e-08e6-43b4-af02-93a19d2eea0f" absoluteBounds="1.1400000000000001, 9.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

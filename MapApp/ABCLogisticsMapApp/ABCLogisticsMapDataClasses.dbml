@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MyTestDB" Class="ABCLogisticsMapDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LENOVO3OF3;Initial Catalog=MyTestDB;Integrated Security=True" SettingsObjectName="ABCLogisticsMapApp.Properties.Settings" SettingsPropertyName="MyTestDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ProviderZips" Member="ProviderZips">
+    <Type Name="ProviderZip">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PrimaryZip" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProviderDistance" Member="ProviderDistances">
+    <Type Name="ProviderDistance">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ShipID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ShipZip" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ShipLat" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ShipLng" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ProviderID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProviderZip" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ProviderLat" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ProviderLng" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Distance" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="RowNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ShipToZips" Member="ShipToZips">
+    <Type Name="ShipToZip">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NearZip1" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NearZip2" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Miles" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ProviderLat" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ProviderLng" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ZipCodeGeoCodes" Member="ZipCodeGeoCodes">
+    <Type Name="ZipCodeGeoCode">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ZipCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NeedMiles" Member="NeedMiles">
+    <Type Name="NeedMile">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="orig_zip" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="dest_zip" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="miles" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="FromLat" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="FromLng" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ToLat" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ToLng" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

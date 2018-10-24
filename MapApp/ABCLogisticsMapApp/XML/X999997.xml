@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>  <Transmission type="WFPShipment">
+  <Shipment>
+    <action>New</action>
+    <hbl_number>X999997</hbl_number>
+    <DIRBY>70872</DIRBY>
+    <ship_id />
+    <ship_name>SALES ATLANTA</ship_name>
+    <ship_company>SALES ATLANTA</ship_company>
+    <ship_ref_no />
+    <ship_street>205 BLVD</ship_street>
+    <ship_street1>SUITE 43</ship_street1>
+    <ship_city>Suwanee</ship_city>
+    <ship_state>GA</ship_state>
+    <ship_country />
+    <ship_phone />
+    <ship_zip>30024</ship_zip>
+    <ship_email />
+    <ship_fax />
+    <cons_id />
+    <cons_name>SATELLITES INC</cons_name>
+    <cons_company>SATELLITES INC</cons_company>
+    <cons_ref_no />
+    <cons_street>100 DR</cons_street>
+    <cons_street1 />
+    <cons_city>JACKSON</cons_city>
+    <cons_state>MS</cons_state>
+    <cons_country />
+    <cons_phone>000-000-0000</cons_phone>
+    <cons_zip>39232</cons_zip>
+    <cons_email />
+    <cons_fax />
+    <bill_to_ref>S</bill_to_ref>
+    <servicename>E</servicename>
+    <is_domestic>True</is_domestic>
+    <Amdelivery>False</Amdelivery>
+    <InsideDelivery>False</InsideDelivery>
+    <Saturdaypud>False</Saturdaypud>
+    <Sundaypud>False</Sundaypud>
+    <Holidaypud>False</Holidaypud>
+    <Hazardous>False</Hazardous>
+    <MallConventionpud>False</MallConventionpud>
+    <Residentialpud>False</Residentialpud>
+    <WhiteGloveDelivery>False</WhiteGloveDelivery>
+    <AfterHourspud>False</AfterHourspud>
+    <Liftgatepud>False</Liftgatepud>
+    <orig_airport />
+    <dest_airport />
+    <ship_cod />
+    <internal_ref_no>57699879</internal_ref_no>
+    <reference2 />
+    <carrier_charge />
+    <freight_charge />
+    <duties_and_taxes />
+    <ship_date>08/01/2014</ship_date>
+    <req_del_date />
+    <ready_time />
+    <close_time />
+    <ship_description>SAT EQUIP - 23 Pieces</ship_description>
+    <signature />
+    <station_phone>866-915-5195</station_phone>
+    <station_phone_ex />
+    <station_email>sabcdia@abclogistics.com</station_email>
+    <declared_value />
+    <insurance />
+    <special_instructions>Pay Terms: NET 30NMFC Code: 60500-6Ship Method: SERVICE BY AIRFreight: Electrical Appliances or InstrumentsNotes: ANGIE 999-999-9999 lift gate and insidedeliv</special_instructions>
+    <station>dia</station>
+    <additinal_emails />
+    <logon_id>abcstar</logon_id>
+    <customs_value />
+  </Shipment>
+</Transmission>
