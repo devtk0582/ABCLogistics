@@ -1,0 +1,160 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="TMS.SiteMaster" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>ABCLogistics Global - TMS</title>
+    <link href="Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/tms.css" rel="stylesheet" type="text/css" />
+    <script src="Scripts/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="Scripts/jquery.roundabout.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#header_carousel').roundabout({
+                childSelector: "a",
+                minOpacity: 1,
+                autoplay: false
+		});
+        });
+
+        function carouselMoveToPrev() {
+            $('#header_carousel').roundabout("animateToPreviousChild");
+        }
+
+        function carouselMoveToNext() {
+            $('#header_carousel').roundabout("animateToNextChild");
+        }
+
+        function OpenLogOutPanel() {
+            $("#tblLogOut").toggle();
+        }
+
+        function redirectToUrl(url, domain) {
+            if (document.domain != domain) {
+                window.open(url);
+            }
+            return false;
+        }
+            
+    </script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <center>
+    <div style="width: 90%;">
+        <div class="wrapper" style="text-align: center">
+        <header>
+        <table width="90%" bgcolor="white" runat="server" id="MasterHeader" style="height: 60px;min-width: 1200px;">
+                <tr>
+                    <td style="width: 25%" align="left">
+                         <asp:Image ID="imgLogo" runat="server" ImageUrl="Images/logo.gif" />
+                    </td>
+                    <td style="width: 55%">
+                        <table width="100%" bgcolor="white" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td align="right" valign="bottom">
+                                    <a style="cursor: hand;" onclick="carouselMoveToPrev();">
+                                        <img alt="prev" style="cursor: pointer;" src="Images/carousel/prev_arrow.png" height="25px" width="25px" />
+                                    </a>
+                                </td>
+                                <td valign="middle" align="center">
+                                    <div id="header_carousel">
+                                        <a onclick="return redirectToUrl('http://localhost/tms', 'localhost');"><img src="Images/carousel/tms.png" alt="" class="slide" /></a>
+                                        <a onclick="return redirectToUrl('http://www.abclogistics.com', 'www.abclogistics.com');"><img src="Images/carousel/breeze.png" alt="" class="slide" /></a>
+                                        <a onclick="return redirectToUrl('http://www.abclogistics.com', 'www.abclogistics.com');"><img src="Images/carousel/edi.png" alt="" class="slide" /></a>
+                                        <a onclick="return redirectToUrl('http://localhost/abclogistics', 'localhost');"><img src="Images/carousel/maintenance.png" alt="" class="slide" /></a>
+                                        <a onclick="return redirectToUrl('http://www.abclogistics.com', 'www.abclogistics.com');"><img src="Images/carousel/quotes.png" alt="" class="slide" /></a>
+                                        <a onclick="return redirectToUrl('http://www.abclogistics.com', 'www.abclogistics.com');"><img src="Images/carousel/ffm.png" alt="" class="slide" /></a>
+                                    </div>
+                                </td>
+                                <td valign="bottom" align="left">
+                                    <a style="cursor: hand;" onclick="carouselMoveToNext();">
+                                        <img alt="next" style="cursor: pointer;" src="Images/carousel/next_arrow.png" height="25px" width="25px" />
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td style="width: 20%">
+                        <table width="100%" align="left">
+                            <tr>
+                                <td align="right">
+                                    <asp:Label ID="lblWelcomeMsg" runat="server" Text="" Style="color: #1c49ae; font-size: 12px;
+                                        font-weight: bold;"></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">
+                                    <asp:Label ID="lblDate" runat="server" Text="" Style="color: #1c49ae; font-size: 12px;
+                                        font-weight: normal;"></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">
+                                <div runat="server" id="normalUserPanel">
+                                        <asp:LinkButton ID="lnkLogOff" runat="server" ForeColor="#1c49ae" OnClick="lnkLogOff_Click">Sign Out</asp:LinkButton>
+                                        </div>
+                                        <div runat="server" visible="false" id="abclogisticsEmployeePanel" style="float: right;">
+                                            <a href="javascript:OpenLogOutPanel();" style="color: #1c49ae;" >
+                                                <span runat="server" id="spanUserEmail"></span>
+                                                <img alt="arrow" src="Images/blue_arrow_down.gif" width="12px" height="8px" style="border: 0px;" />
+                                            </a>
+                                            <div class="arrow_box_container" style="width: 250px;">
+                                                <div id="tblLogOut" class="arrow_box" style="display: none;">
+                                                <table width="100%" cellpadding="3" cellspacing="2" style="padding: 5px;">
+                                                <tr>
+                                                    <td align="left">
+                                                        Please log out from Gmail first in order to log out from TMS
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <table width="100%">
+                                                            <tr>
+                                                                <td align="left">
+                                                                     <a href="http://mail.google.com" target="_blank" class="sign_out_style" >Go To Gmail</a>
+                                                                </td>
+                                                                <td align="right">
+                                                                    <asp:LinkButton ID="lnkSingOutGoogle" runat="server" OnClick="lnkLogOff_Click" CssClass="sign_out_style">Sign Out</asp:LinkButton>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                       
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            </div>
+                                            </div>
+                                        </div>
+                                </td>
+
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <asp:AlwaysVisibleControlExtender ID="HeaderAlwaysVisibleControlExtender" runat="server" TargetControlID="MasterHeader" HorizontalSide="Center"></asp:AlwaysVisibleControlExtender>
+    </header>
+    </div>
+        <div style="min-height: 500px;">
+        <asp:ContentPlaceHolder ID="BodyContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+        <div class="wrapper">
+        <footer>
+            <div style="height: 35px; background-color: #5EADDC; width: 100%; color: White; margin-bottom: 15px; vertical-align: middle">
+                Copy Right @ ABCLogistics Global
+            </div>
+        </footer>
+    </div>
+    </div>
+    </center>
+    </form>
+</body>
+</html>

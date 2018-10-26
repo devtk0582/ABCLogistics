@@ -1,0 +1,990 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ABCLogisticsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ABCLogisticsModelStoreContainer">
+          <EntitySet Name="Accounts" EntityType="ABCLogisticsModel.Store.Accounts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ErrorLogs" EntityType="ABCLogisticsModel.Store.ErrorLogs" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ReportColumns" EntityType="ABCLogisticsModel.Store.ReportColumns" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Services" EntityType="ABCLogisticsModel.Store.Services" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Shipments" EntityType="ABCLogisticsModel.Store.Shipments" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Terminals" EntityType="ABCLogisticsModel.Store.Terminals" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserReportColumns" EntityType="ABCLogisticsModel.Store.UserReportColumns" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Users" EntityType="ABCLogisticsModel.Store.Users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ShipmentReportView" EntityType="ABCLogisticsModel.Store.ShipmentReportView" store:Type="Views" store:Schema="dbo" store:Name="ShipmentReportView">
+            <DefiningQuery>SELECT 
+      [ShipmentReportView].[ShipmentID] AS [ShipmentID], 
+      [ShipmentReportView].[HAWB] AS [HAWB], 
+      [ShipmentReportView].[ABCLogisticsTracking] AS [ABCLogisticsTracking], 
+      [ShipmentReportView].[ShipperName] AS [ShipperName], 
+      [ShipmentReportView].[ShipperAddress] AS [ShipperAddress], 
+      [ShipmentReportView].[ShipperCity] AS [ShipperCity], 
+      [ShipmentReportView].[ShipperState] AS [ShipperState], 
+      [ShipmentReportView].[ReceiverName] AS [ReceiverName], 
+      [ShipmentReportView].[ReceiverAddress] AS [ReceiverAddress], 
+      [ShipmentReportView].[ReceiverCity] AS [ReceiverCity], 
+      [ShipmentReportView].[ReceiverState] AS [ReceiverState], 
+      [ShipmentReportView].[ServiceDesc] AS [ServiceDesc], 
+      [ShipmentReportView].[Terminal] AS [Terminal], 
+      [ShipmentReportView].[CreateDate] AS [CreateDate], 
+      [ShipmentReportView].[IsQuote] AS [IsQuote], 
+      [ShipmentReportView].[PUArea] AS [PUArea], 
+      [ShipmentReportView].[DELArea] AS [DELArea], 
+      [ShipmentReportView].[NoFuelSurcharge] AS [NoFuelSurcharge]
+      FROM [dbo].[ShipmentReportView] AS [ShipmentReportView]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Shipments_Accounts" Association="ABCLogisticsModel.Store.FK_Shipments_Accounts">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="Shipments" EntitySet="Shipments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shipments_Accounts1" Association="ABCLogisticsModel.Store.FK_Shipments_Accounts1">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="Shipments" EntitySet="Shipments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shipments_Accounts2" Association="ABCLogisticsModel.Store.FK_Shipments_Accounts2">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="Shipments" EntitySet="Shipments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shipments_Accounts3" Association="ABCLogisticsModel.Store.FK_Shipments_Accounts3">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="Shipments" EntitySet="Shipments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shipments_Accounts4" Association="ABCLogisticsModel.Store.FK_Shipments_Accounts4">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="Shipments" EntitySet="Shipments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shipments_Services" Association="ABCLogisticsModel.Store.FK_Shipments_Services">
+            <End Role="Services" EntitySet="Services" />
+            <End Role="Shipments" EntitySet="Shipments" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Accounts">
+          <Key>
+            <PropertyRef Name="AccountID" />
+          </Key>
+          <Property Name="AccountID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AccountNumber" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="60" />
+          <Property Name="Address1" Type="varchar" MaxLength="60" />
+          <Property Name="Address2" Type="varchar" MaxLength="60" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="State" Type="varchar" MaxLength="20" />
+          <Property Name="Postal" Type="varchar" MaxLength="50" />
+          <Property Name="Country" Type="varchar" MaxLength="20" />
+          <Property Name="Telephone" Type="varchar" MaxLength="14" />
+          <Property Name="PhoneExt" Type="varchar" MaxLength="8" />
+          <Property Name="Fax" Type="varchar" MaxLength="14" />
+          <Property Name="TollFree" Type="varchar" MaxLength="14" />
+          <Property Name="Email" Type="varchar" MaxLength="40" />
+          <Property Name="DateUpdated" Type="datetime" />
+          <Property Name="SortName" Type="varchar" MaxLength="100" />
+          <Property Name="SortAddress" Type="varchar" MaxLength="200" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="Address3" Type="varchar" MaxLength="50" />
+          <Property Name="TimeZone" Type="int" />
+        </EntityType>
+        <EntityType Name="ErrorLogs">
+          <Key>
+            <PropertyRef Name="ErrorID" />
+          </Key>
+          <Property Name="ErrorID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Message" Type="varchar" MaxLength="1000" />
+          <Property Name="Source" Type="varchar" MaxLength="1000" />
+          <Property Name="StackTrace" Type="varchar" MaxLength="4000" />
+          <Property Name="MemberName" Type="varchar" MaxLength="255" />
+          <Property Name="MethodFrom" Type="varchar" MaxLength="100" />
+          <Property Name="LogDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ReportColumns">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ColumnCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ColumnName" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Services">
+          <Key>
+            <PropertyRef Name="ServiceID" />
+          </Key>
+          <Property Name="ServiceID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Service" Type="char" MaxLength="1" />
+          <Property Name="ServiceCode" Type="varchar" MaxLength="3" />
+          <Property Name="ServiceDesc" Type="varchar" MaxLength="40" />
+          <Property Name="ServicePickup" Type="bit" />
+          <Property Name="ServiceDelivery" Type="bit" />
+          <Property Name="ServiceCarrier" Type="bit" />
+          <Property Name="ServiceWarehouse" Type="bit" />
+          <Property Name="ServiceShortDesc" Type="varchar" MaxLength="8" />
+          <Property Name="ServiceSystem" Type="char" MaxLength="1" />
+          <Property Name="SortOrder" Type="char" MaxLength="1" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="International" Type="bit" />
+          <Property Name="Domestic" Type="bit" />
+        </EntityType>
+        <EntityType Name="Shipments">
+          <Key>
+            <PropertyRef Name="ShipmentID" />
+          </Key>
+          <Property Name="ShipmentID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="HAWB" Type="varchar" MaxLength="36" />
+          <Property Name="ABCLogisticsTracking" Type="varchar" MaxLength="7" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="ShipperID" Type="int" />
+          <Property Name="ShipperAttn" Type="varchar" MaxLength="30" />
+          <Property Name="ShipperPhone" Type="varchar" MaxLength="20" />
+          <Property Name="ConsigneeID" Type="int" />
+          <Property Name="ConsigneeAttn" Type="varchar" MaxLength="30" />
+          <Property Name="ConsigneePhone" Type="varchar" MaxLength="20" />
+          <Property Name="ThdPartyID" Type="int" />
+          <Property Name="ThdPartyAttn" Type="varchar" MaxLength="30" />
+          <Property Name="ThdPartyPhone" Type="varchar" MaxLength="20" />
+          <Property Name="BillTo" Type="varchar" MaxLength="50" />
+          <Property Name="NotifyID" Type="int" />
+          <Property Name="NotifyAttn" Type="varchar" MaxLength="30" />
+          <Property Name="NotifyPhone" Type="varchar" MaxLength="20" />
+          <Property Name="InvToID" Type="int" />
+          <Property Name="SplitCode" Type="varchar" MaxLength="2" />
+          <Property Name="SplitLocation" Type="varchar" MaxLength="3" />
+          <Property Name="Terminal" Type="varchar" MaxLength="3" />
+          <Property Name="DeclaredValue" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Insurance" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="CustomsValue" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="CODType" Type="varchar" MaxLength="50" />
+          <Property Name="SalesCode1" Type="varchar" MaxLength="3" />
+          <Property Name="SalesCode2" Type="varchar" MaxLength="3" />
+          <Property Name="ServiceLevel" Type="int" />
+          <Property Name="TransportMode" Type="varchar" MaxLength="1" />
+          <Property Name="ChargeWeight" Type="int" />
+          <Property Name="TotalCharge" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="TotalCosts" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="DimFactor" Type="int" />
+          <Property Name="AddDate" Type="datetime" />
+          <Property Name="AddTime" Type="varchar" MaxLength="20" />
+          <Property Name="IsGovt" Type="bit" />
+          <Property Name="IsQuote" Type="bit" />
+          <Property Name="SpecialInstructions" Type="nvarchar" MaxLength="600" />
+          <Property Name="PUArea" Type="varchar" MaxLength="20" />
+          <Property Name="DELArea" Type="varchar" MaxLength="20" />
+          <Property Name="AES" Type="varchar" MaxLength="40" />
+          <Property Name="FTRExemptions" Type="varchar" MaxLength="50" />
+          <Property Name="DRInfo" Type="varchar" MaxLength="50" />
+          <Property Name="NextStatusDate" Type="datetime" />
+          <Property Name="NoFuelSurcharge" Type="bit" />
+        </EntityType>
+        <EntityType Name="Terminals">
+          <Key>
+            <PropertyRef Name="TerminalID" />
+          </Key>
+          <Property Name="TerminalID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StationCode" Type="varchar" MaxLength="50" />
+          <Property Name="Origin" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Address1" Type="varchar" MaxLength="50" />
+          <Property Name="Address2" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="State" Type="varchar" MaxLength="50" />
+          <Property Name="Zip" Type="varchar" MaxLength="50" />
+          <Property Name="Country" Type="varchar" MaxLength="30" />
+          <Property Name="Telephone" Type="varchar" MaxLength="14" />
+          <Property Name="TollFree" Type="varchar" MaxLength="14" />
+          <Property Name="Fax" Type="varchar" MaxLength="14" />
+          <Property Name="AltFax" Type="varchar" MaxLength="14" />
+          <Property Name="IATA" Type="varchar" MaxLength="14" />
+          <Property Name="TimeZone" Type="varchar" MaxLength="1" />
+          <Property Name="VendorCommission" Type="varchar" MaxLength="8" />
+          <Property Name="VendorHT" Type="varchar" MaxLength="3" />
+          <Property Name="ChangeDate" Type="datetime" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="GPSplit" Type="varchar" MaxLength="1" />
+          <Property Name="Currency" Type="varchar" MaxLength="3" />
+          <Property Name="Email" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="UserReportColumns">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="ColumnCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="SortNum" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Password" Type="varchar" MaxLength="100" />
+          <Property Name="Email" Type="varchar" MaxLength="40" />
+          <Property Name="FirstName" Type="varchar" MaxLength="20" />
+          <Property Name="LastName" Type="varchar" MaxLength="20" />
+          <Property Name="Telephone" Type="varchar" MaxLength="14" />
+          <Property Name="RoleID" Type="int" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="SalesmanNo" Type="varchar" MaxLength="3" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="LastLoginDate" Type="datetime" />
+          <Property Name="GoogleOpenID" Type="uniqueidentifier" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ABCLogistics_Global.dbo.ShipmentReportView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ShipmentReportView">
+          <Key>
+            <PropertyRef Name="ShipmentID" />
+          </Key>
+          <Property Name="ShipmentID" Type="int" Nullable="false" />
+          <Property Name="HAWB" Type="varchar" MaxLength="36" />
+          <Property Name="ABCLogisticsTracking" Type="varchar" MaxLength="7" />
+          <Property Name="ShipperName" Type="varchar" MaxLength="60" />
+          <Property Name="ShipperAddress" Type="varchar" MaxLength="60" />
+          <Property Name="ShipperCity" Type="varchar" MaxLength="50" />
+          <Property Name="ShipperState" Type="varchar" MaxLength="20" />
+          <Property Name="ReceiverName" Type="varchar" MaxLength="60" />
+          <Property Name="ReceiverAddress" Type="varchar" MaxLength="60" />
+          <Property Name="ReceiverCity" Type="varchar" MaxLength="50" />
+          <Property Name="ReceiverState" Type="varchar" MaxLength="20" />
+          <Property Name="ServiceDesc" Type="varchar" MaxLength="40" />
+          <Property Name="Terminal" Type="varchar" MaxLength="3" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="IsQuote" Type="bit" />
+          <Property Name="PUArea" Type="varchar" MaxLength="20" />
+          <Property Name="DELArea" Type="varchar" MaxLength="20" />
+          <Property Name="NoFuelSurcharge" Type="bit" />
+        </EntityType>
+        <Association Name="FK_Shipments_Accounts">
+          <End Role="Accounts" Type="ABCLogisticsModel.Store.Accounts" Multiplicity="0..1" />
+          <End Role="Shipments" Type="ABCLogisticsModel.Store.Shipments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="Shipments">
+              <PropertyRef Name="ShipperID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Shipments_Accounts1">
+          <End Role="Accounts" Type="ABCLogisticsModel.Store.Accounts" Multiplicity="0..1" />
+          <End Role="Shipments" Type="ABCLogisticsModel.Store.Shipments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="Shipments">
+              <PropertyRef Name="ConsigneeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Shipments_Accounts2">
+          <End Role="Accounts" Type="ABCLogisticsModel.Store.Accounts" Multiplicity="0..1" />
+          <End Role="Shipments" Type="ABCLogisticsModel.Store.Shipments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="Shipments">
+              <PropertyRef Name="ThdPartyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Shipments_Accounts3">
+          <End Role="Accounts" Type="ABCLogisticsModel.Store.Accounts" Multiplicity="0..1" />
+          <End Role="Shipments" Type="ABCLogisticsModel.Store.Shipments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="Shipments">
+              <PropertyRef Name="NotifyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Shipments_Accounts4">
+          <End Role="Accounts" Type="ABCLogisticsModel.Store.Accounts" Multiplicity="0..1" />
+          <End Role="Shipments" Type="ABCLogisticsModel.Store.Shipments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="Shipments">
+              <PropertyRef Name="InvToID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Shipments_Services">
+          <End Role="Services" Type="ABCLogisticsModel.Store.Services" Multiplicity="0..1" />
+          <End Role="Shipments" Type="ABCLogisticsModel.Store.Shipments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Services">
+              <PropertyRef Name="ServiceID" />
+            </Principal>
+            <Dependent Role="Shipments">
+              <PropertyRef Name="ServiceLevel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="Global_AuthenticateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="email" Type="varchar" Mode="In" />
+          <Parameter Name="password" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="Global_AuthenticateUserByEmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="email" Type="varchar" Mode="In" />
+          <Parameter Name="identifier" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="Global_GetUserAppUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userId" Type="int" Mode="In" />
+          <Parameter Name="appId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Global_GetUserMasterReportColumns" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="user_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Global_LogError" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="message" Type="varchar" Mode="In" />
+          <Parameter Name="source" Type="varchar" Mode="In" />
+          <Parameter Name="stack_trace" Type="varchar" Mode="In" />
+          <Parameter Name="member_name" Type="varchar" Mode="In" />
+          <Parameter Name="method_from" Type="varchar" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ABCLogisticsModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="ABCLogisticsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Users" EntityType="ABCLogisticsModel.User" />
+          <FunctionImport Name="Global_AuthenticateUserByEmail" ReturnType="Collection(ABCLogisticsModel.Global_AuthenticateUserByEmail_Result)">
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="identifier" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <EntitySet Name="ErrorLogs" EntityType="ABCLogisticsModel.ErrorLog" />
+          <FunctionImport Name="Global_AuthenticateUser" ReturnType="Collection(ABCLogisticsModel.Global_AuthenticateUser_Result)">
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Global_GetUserAppUser" ReturnType="Collection(Int32)">
+            <Parameter Name="userId" Mode="In" Type="Int32" />
+            <Parameter Name="appId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="Accounts" EntityType="ABCLogisticsModel.Account" />
+          <EntitySet Name="ReportColumns" EntityType="ABCLogisticsModel.ReportColumn" />
+          <EntitySet Name="Services" EntityType="ABCLogisticsModel.Service" />
+          <EntitySet Name="Shipments" EntityType="ABCLogisticsModel.Shipment" />
+          <EntitySet Name="Terminals" EntityType="ABCLogisticsModel.Terminal" />
+          <EntitySet Name="UserReportColumns" EntityType="ABCLogisticsModel.UserReportColumn" />
+          <AssociationSet Name="FK_Shipments_Accounts" Association="ABCLogisticsModel.FK_Shipments_Accounts">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Shipment" EntitySet="Shipments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shipments_Accounts1" Association="ABCLogisticsModel.FK_Shipments_Accounts1">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Shipment" EntitySet="Shipments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shipments_Accounts2" Association="ABCLogisticsModel.FK_Shipments_Accounts2">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Shipment" EntitySet="Shipments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shipments_Accounts3" Association="ABCLogisticsModel.FK_Shipments_Accounts3">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Shipment" EntitySet="Shipments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shipments_Accounts4" Association="ABCLogisticsModel.FK_Shipments_Accounts4">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Shipment" EntitySet="Shipments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shipments_Services" Association="ABCLogisticsModel.FK_Shipments_Services">
+            <End Role="Service" EntitySet="Services" />
+            <End Role="Shipment" EntitySet="Shipments" />
+          </AssociationSet>
+          <FunctionImport Name="Global_GetUserMasterReportColumns" EntitySet="ReportColumns" ReturnType="Collection(ABCLogisticsModel.ReportColumn)">
+          <Parameter Name="user_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="ShipmentReportViews" EntityType="ABCLogisticsModel.ShipmentReportView" />
+        </EntityContainer>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Password" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="FirstName" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="LastName" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Telephone" Type="String" MaxLength="14" Unicode="false" FixedLength="false" />
+          <Property Name="RoleID" Type="Int32" />
+          <Property Name="UpdateDate" Type="DateTime" />
+          <Property Name="SalesmanNo" Type="String" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="Active" Type="Boolean" />
+          <Property Name="LastLoginDate" Type="DateTime" />
+          <Property Name="GoogleOpenID" Type="Guid" />
+        </EntityType>
+        <ComplexType Name="Global_AuthenticateUserByEmail_Result">
+          <Property Type="Int32" Name="UserID" Nullable="false" />
+          <Property Type="String" Name="FirstName" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="LastName" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="RoleID" Nullable="true" />
+          <Property Type="String" Name="RoleName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="Password" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <EntityType Name="ErrorLog">
+          <Key>
+            <PropertyRef Name="ErrorID" />
+          </Key>
+          <Property Type="Int32" Name="ErrorID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Message" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Source" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="StackTrace" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MemberName" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MethodFrom" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="LogDate" />
+        </EntityType>
+        <ComplexType Name="Global_AuthenticateUser_Result">
+          <Property Type="Int32" Name="UserID" Nullable="false" />
+          <Property Type="String" Name="FirstName" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="LastName" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="RoleID" Nullable="true" />
+          <Property Type="String" Name="RoleName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="Password" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="AccountID" />
+          </Key>
+          <Property Type="Int32" Name="AccountID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="AccountNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Name" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Address1" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Address2" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="City" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="State" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Postal" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Country" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Telephone" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PhoneExt" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Fax" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TollFree" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Email" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DateUpdated" />
+          <Property Type="String" Name="SortName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SortAddress" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Active" />
+          <Property Type="String" Name="Address3" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="TimeZone" />
+          <NavigationProperty Name="Shipments" Relationship="ABCLogisticsModel.FK_Shipments_Accounts" FromRole="Account" ToRole="Shipment" />
+          <NavigationProperty Name="Shipments1" Relationship="ABCLogisticsModel.FK_Shipments_Accounts1" FromRole="Account" ToRole="Shipment" />
+          <NavigationProperty Name="Shipments2" Relationship="ABCLogisticsModel.FK_Shipments_Accounts2" FromRole="Account" ToRole="Shipment" />
+          <NavigationProperty Name="Shipments3" Relationship="ABCLogisticsModel.FK_Shipments_Accounts3" FromRole="Account" ToRole="Shipment" />
+          <NavigationProperty Name="Shipments4" Relationship="ABCLogisticsModel.FK_Shipments_Accounts4" FromRole="Account" ToRole="Shipment" />
+        </EntityType>
+        <EntityType Name="ReportColumn">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ColumnCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ColumnName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="ServiceID" />
+          </Key>
+          <Property Type="Int32" Name="ServiceID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Service1" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="ServiceCode" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ServiceDesc" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="ServicePickup" />
+          <Property Type="Boolean" Name="ServiceDelivery" />
+          <Property Type="Boolean" Name="ServiceCarrier" />
+          <Property Type="Boolean" Name="ServiceWarehouse" />
+          <Property Type="String" Name="ServiceShortDesc" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ServiceSystem" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="SortOrder" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="Boolean" Name="Active" />
+          <Property Type="Boolean" Name="International" />
+          <Property Type="Boolean" Name="Domestic" />
+          <NavigationProperty Name="Shipments" Relationship="ABCLogisticsModel.FK_Shipments_Services" FromRole="Service" ToRole="Shipment" />
+        </EntityType>
+        <EntityType Name="Shipment">
+          <Key>
+            <PropertyRef Name="ShipmentID" />
+          </Key>
+          <Property Type="Int32" Name="ShipmentID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="HAWB" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ABCLogisticsTracking" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="UserID" />
+          <Property Type="Int32" Name="ShipperID" />
+          <Property Type="String" Name="ShipperAttn" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ShipperPhone" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="ConsigneeID" />
+          <Property Type="String" Name="ConsigneeAttn" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ConsigneePhone" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="ThdPartyID" />
+          <Property Type="String" Name="ThdPartyAttn" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ThdPartyPhone" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="BillTo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="NotifyID" />
+          <Property Type="String" Name="NotifyAttn" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NotifyPhone" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="InvToID" />
+          <Property Type="String" Name="SplitCode" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SplitLocation" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Terminal" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="DeclaredValue" Precision="10" Scale="2" />
+          <Property Type="Decimal" Name="Insurance" Precision="10" Scale="2" />
+          <Property Type="Decimal" Name="CustomsValue" Precision="10" Scale="2" />
+          <Property Type="String" Name="CODType" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SalesCode1" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SalesCode2" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="ServiceLevel" />
+          <Property Type="String" Name="TransportMode" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="ChargeWeight" />
+          <Property Type="Decimal" Name="TotalCharge" Precision="10" Scale="2" />
+          <Property Type="Decimal" Name="TotalCosts" Precision="10" Scale="2" />
+          <Property Type="Int32" Name="DimFactor" />
+          <Property Type="DateTime" Name="AddDate" />
+          <Property Type="String" Name="AddTime" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsGovt" />
+          <Property Type="Boolean" Name="IsQuote" />
+          <Property Type="String" Name="SpecialInstructions" MaxLength="600" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PUArea" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DELArea" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AES" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FTRExemptions" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DRInfo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="NextStatusDate" />
+          <Property Type="Boolean" Name="NoFuelSurcharge" />
+          <NavigationProperty Name="Account" Relationship="ABCLogisticsModel.FK_Shipments_Accounts" FromRole="Shipment" ToRole="Account" />
+          <NavigationProperty Name="Account1" Relationship="ABCLogisticsModel.FK_Shipments_Accounts1" FromRole="Shipment" ToRole="Account" />
+          <NavigationProperty Name="Account2" Relationship="ABCLogisticsModel.FK_Shipments_Accounts2" FromRole="Shipment" ToRole="Account" />
+          <NavigationProperty Name="Account3" Relationship="ABCLogisticsModel.FK_Shipments_Accounts3" FromRole="Shipment" ToRole="Account" />
+          <NavigationProperty Name="Account4" Relationship="ABCLogisticsModel.FK_Shipments_Accounts4" FromRole="Shipment" ToRole="Account" />
+          <NavigationProperty Name="Service" Relationship="ABCLogisticsModel.FK_Shipments_Services" FromRole="Shipment" ToRole="Service" />
+        </EntityType>
+        <EntityType Name="Terminal">
+          <Key>
+            <PropertyRef Name="TerminalID" />
+          </Key>
+          <Property Type="Int32" Name="TerminalID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="StationCode" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Origin" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Address1" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Address2" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="City" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="State" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Zip" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Country" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Telephone" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TollFree" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Fax" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AltFax" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IATA" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TimeZone" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VendorCommission" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VendorHT" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="ChangeDate" />
+          <Property Type="Boolean" Name="Active" />
+          <Property Type="String" Name="GPSplit" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Currency" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Email" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UserReportColumn">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserID" Nullable="false" />
+          <Property Type="String" Name="ColumnCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="SortNum" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Shipments_Accounts">
+          <End Type="ABCLogisticsModel.Account" Role="Account" Multiplicity="0..1" />
+          <End Type="ABCLogisticsModel.Shipment" Role="Shipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="Shipment">
+              <PropertyRef Name="ShipperID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Shipments_Accounts1">
+          <End Type="ABCLogisticsModel.Account" Role="Account" Multiplicity="0..1" />
+          <End Type="ABCLogisticsModel.Shipment" Role="Shipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="Shipment">
+              <PropertyRef Name="ConsigneeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Shipments_Accounts2">
+          <End Type="ABCLogisticsModel.Account" Role="Account" Multiplicity="0..1" />
+          <End Type="ABCLogisticsModel.Shipment" Role="Shipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="Shipment">
+              <PropertyRef Name="ThdPartyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Shipments_Accounts3">
+          <End Type="ABCLogisticsModel.Account" Role="Account" Multiplicity="0..1" />
+          <End Type="ABCLogisticsModel.Shipment" Role="Shipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="Shipment">
+              <PropertyRef Name="NotifyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Shipments_Accounts4">
+          <End Type="ABCLogisticsModel.Account" Role="Account" Multiplicity="0..1" />
+          <End Type="ABCLogisticsModel.Shipment" Role="Shipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="AccountID" />
+            </Principal>
+            <Dependent Role="Shipment">
+              <PropertyRef Name="InvToID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Shipments_Services">
+          <End Type="ABCLogisticsModel.Service" Role="Service" Multiplicity="0..1" />
+          <End Type="ABCLogisticsModel.Shipment" Role="Shipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="ServiceID" />
+            </Principal>
+            <Dependent Role="Shipment">
+              <PropertyRef Name="ServiceLevel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ShipmentReportView">
+          <Key>
+            <PropertyRef Name="ShipmentID" />
+          </Key>
+          <Property Type="Int32" Name="ShipmentID" Nullable="false" />
+          <Property Type="String" Name="HAWB" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ABCLogisticsTracking" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ShipperName" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ShipperAddress" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ShipperCity" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ShipperState" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ReceiverName" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ReceiverAddress" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ReceiverCity" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ReceiverState" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ServiceDesc" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Terminal" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreateDate" />
+          <Property Type="Boolean" Name="IsQuote" />
+          <Property Type="String" Name="PUArea" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DELArea" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="NoFuelSurcharge" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ABCLogisticsModelStoreContainer" CdmEntityContainer="ABCLogisticsEntities">
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="ABCLogisticsModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="SalesmanNo" ColumnName="SalesmanNo" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="GoogleOpenID" ColumnName="GoogleOpenID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Global_AuthenticateUserByEmail" FunctionName="ABCLogisticsModel.Store.Global_AuthenticateUserByEmail">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ABCLogisticsModel.Global_AuthenticateUserByEmail_Result">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="ErrorLogs">
+            <EntityTypeMapping TypeName="ABCLogisticsModel.ErrorLog">
+              <MappingFragment StoreEntitySet="ErrorLogs">
+                <ScalarProperty Name="LogDate" ColumnName="LogDate" />
+                <ScalarProperty Name="MethodFrom" ColumnName="MethodFrom" />
+                <ScalarProperty Name="MemberName" ColumnName="MemberName" />
+                <ScalarProperty Name="StackTrace" ColumnName="StackTrace" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="ErrorID" ColumnName="ErrorID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Global_AuthenticateUser" FunctionName="ABCLogisticsModel.Store.Global_AuthenticateUser">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ABCLogisticsModel.Global_AuthenticateUser_Result">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Global_GetUserAppUser" FunctionName="ABCLogisticsModel.Store.Global_GetUserAppUser" />
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="ABCLogisticsModel.Account">
+              <MappingFragment StoreEntitySet="Accounts">
+                <ScalarProperty Name="TimeZone" ColumnName="TimeZone" />
+                <ScalarProperty Name="Address3" ColumnName="Address3" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="SortAddress" ColumnName="SortAddress" />
+                <ScalarProperty Name="SortName" ColumnName="SortName" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="TollFree" ColumnName="TollFree" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="PhoneExt" ColumnName="PhoneExt" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Postal" ColumnName="Postal" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReportColumns">
+            <EntityTypeMapping TypeName="ABCLogisticsModel.ReportColumn">
+              <MappingFragment StoreEntitySet="ReportColumns">
+                <ScalarProperty Name="ColumnName" ColumnName="ColumnName" />
+                <ScalarProperty Name="ColumnCode" ColumnName="ColumnCode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Services">
+            <EntityTypeMapping TypeName="ABCLogisticsModel.Service">
+              <MappingFragment StoreEntitySet="Services">
+                <ScalarProperty Name="Domestic" ColumnName="Domestic" />
+                <ScalarProperty Name="International" ColumnName="International" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="ServiceSystem" ColumnName="ServiceSystem" />
+                <ScalarProperty Name="ServiceShortDesc" ColumnName="ServiceShortDesc" />
+                <ScalarProperty Name="ServiceWarehouse" ColumnName="ServiceWarehouse" />
+                <ScalarProperty Name="ServiceCarrier" ColumnName="ServiceCarrier" />
+                <ScalarProperty Name="ServiceDelivery" ColumnName="ServiceDelivery" />
+                <ScalarProperty Name="ServicePickup" ColumnName="ServicePickup" />
+                <ScalarProperty Name="ServiceDesc" ColumnName="ServiceDesc" />
+                <ScalarProperty Name="ServiceCode" ColumnName="ServiceCode" />
+                <ScalarProperty Name="Service1" ColumnName="Service" />
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shipments">
+            <EntityTypeMapping TypeName="ABCLogisticsModel.Shipment">
+              <MappingFragment StoreEntitySet="Shipments">
+                <ScalarProperty Name="NoFuelSurcharge" ColumnName="NoFuelSurcharge" />
+                <ScalarProperty Name="NextStatusDate" ColumnName="NextStatusDate" />
+                <ScalarProperty Name="DRInfo" ColumnName="DRInfo" />
+                <ScalarProperty Name="FTRExemptions" ColumnName="FTRExemptions" />
+                <ScalarProperty Name="AES" ColumnName="AES" />
+                <ScalarProperty Name="DELArea" ColumnName="DELArea" />
+                <ScalarProperty Name="PUArea" ColumnName="PUArea" />
+                <ScalarProperty Name="SpecialInstructions" ColumnName="SpecialInstructions" />
+                <ScalarProperty Name="IsQuote" ColumnName="IsQuote" />
+                <ScalarProperty Name="IsGovt" ColumnName="IsGovt" />
+                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+                <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+                <ScalarProperty Name="DimFactor" ColumnName="DimFactor" />
+                <ScalarProperty Name="TotalCosts" ColumnName="TotalCosts" />
+                <ScalarProperty Name="TotalCharge" ColumnName="TotalCharge" />
+                <ScalarProperty Name="ChargeWeight" ColumnName="ChargeWeight" />
+                <ScalarProperty Name="TransportMode" ColumnName="TransportMode" />
+                <ScalarProperty Name="ServiceLevel" ColumnName="ServiceLevel" />
+                <ScalarProperty Name="SalesCode2" ColumnName="SalesCode2" />
+                <ScalarProperty Name="SalesCode1" ColumnName="SalesCode1" />
+                <ScalarProperty Name="CODType" ColumnName="CODType" />
+                <ScalarProperty Name="CustomsValue" ColumnName="CustomsValue" />
+                <ScalarProperty Name="Insurance" ColumnName="Insurance" />
+                <ScalarProperty Name="DeclaredValue" ColumnName="DeclaredValue" />
+                <ScalarProperty Name="Terminal" ColumnName="Terminal" />
+                <ScalarProperty Name="SplitLocation" ColumnName="SplitLocation" />
+                <ScalarProperty Name="SplitCode" ColumnName="SplitCode" />
+                <ScalarProperty Name="InvToID" ColumnName="InvToID" />
+                <ScalarProperty Name="NotifyPhone" ColumnName="NotifyPhone" />
+                <ScalarProperty Name="NotifyAttn" ColumnName="NotifyAttn" />
+                <ScalarProperty Name="NotifyID" ColumnName="NotifyID" />
+                <ScalarProperty Name="BillTo" ColumnName="BillTo" />
+                <ScalarProperty Name="ThdPartyPhone" ColumnName="ThdPartyPhone" />
+                <ScalarProperty Name="ThdPartyAttn" ColumnName="ThdPartyAttn" />
+                <ScalarProperty Name="ThdPartyID" ColumnName="ThdPartyID" />
+                <ScalarProperty Name="ConsigneePhone" ColumnName="ConsigneePhone" />
+                <ScalarProperty Name="ConsigneeAttn" ColumnName="ConsigneeAttn" />
+                <ScalarProperty Name="ConsigneeID" ColumnName="ConsigneeID" />
+                <ScalarProperty Name="ShipperPhone" ColumnName="ShipperPhone" />
+                <ScalarProperty Name="ShipperAttn" ColumnName="ShipperAttn" />
+                <ScalarProperty Name="ShipperID" ColumnName="ShipperID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ABCLogisticsTracking" ColumnName="ABCLogisticsTracking" />
+                <ScalarProperty Name="HAWB" ColumnName="HAWB" />
+                <ScalarProperty Name="ShipmentID" ColumnName="ShipmentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Terminals">
+            <EntityTypeMapping TypeName="ABCLogisticsModel.Terminal">
+              <MappingFragment StoreEntitySet="Terminals">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="GPSplit" ColumnName="GPSplit" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="ChangeDate" ColumnName="ChangeDate" />
+                <ScalarProperty Name="VendorHT" ColumnName="VendorHT" />
+                <ScalarProperty Name="VendorCommission" ColumnName="VendorCommission" />
+                <ScalarProperty Name="TimeZone" ColumnName="TimeZone" />
+                <ScalarProperty Name="IATA" ColumnName="IATA" />
+                <ScalarProperty Name="AltFax" ColumnName="AltFax" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="TollFree" ColumnName="TollFree" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Origin" ColumnName="Origin" />
+                <ScalarProperty Name="StationCode" ColumnName="StationCode" />
+                <ScalarProperty Name="TerminalID" ColumnName="TerminalID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserReportColumns">
+            <EntityTypeMapping TypeName="ABCLogisticsModel.UserReportColumn">
+              <MappingFragment StoreEntitySet="UserReportColumns">
+                <ScalarProperty Name="SortNum" ColumnName="SortNum" />
+                <ScalarProperty Name="ColumnCode" ColumnName="ColumnCode" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Global_GetUserMasterReportColumns" FunctionName="ABCLogisticsModel.Store.Global_GetUserMasterReportColumns" />
+          <EntitySetMapping Name="ShipmentReportViews">
+            <EntityTypeMapping TypeName="ABCLogisticsModel.ShipmentReportView">
+              <MappingFragment StoreEntitySet="ShipmentReportView">
+                <ScalarProperty Name="NoFuelSurcharge" ColumnName="NoFuelSurcharge" />
+                <ScalarProperty Name="DELArea" ColumnName="DELArea" />
+                <ScalarProperty Name="PUArea" ColumnName="PUArea" />
+                <ScalarProperty Name="IsQuote" ColumnName="IsQuote" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Terminal" ColumnName="Terminal" />
+                <ScalarProperty Name="ServiceDesc" ColumnName="ServiceDesc" />
+                <ScalarProperty Name="ReceiverState" ColumnName="ReceiverState" />
+                <ScalarProperty Name="ReceiverCity" ColumnName="ReceiverCity" />
+                <ScalarProperty Name="ReceiverAddress" ColumnName="ReceiverAddress" />
+                <ScalarProperty Name="ReceiverName" ColumnName="ReceiverName" />
+                <ScalarProperty Name="ShipperState" ColumnName="ShipperState" />
+                <ScalarProperty Name="ShipperCity" ColumnName="ShipperCity" />
+                <ScalarProperty Name="ShipperAddress" ColumnName="ShipperAddress" />
+                <ScalarProperty Name="ShipperName" ColumnName="ShipperName" />
+                <ScalarProperty Name="ABCLogisticsTracking" ColumnName="ABCLogisticsTracking" />
+                <ScalarProperty Name="HAWB" ColumnName="HAWB" />
+                <ScalarProperty Name="ShipmentID" ColumnName="ShipmentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ABCLogisticsEntities">
+        <EntityTypeShape EntityType="ABCLogisticsModel.User" Width="1.5" PointX="0.75" PointY="0.75" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ABCLogisticsModel.ErrorLog" Width="1.5" PointX="3.375" PointY="0.75" Height="2.3648893229166665" />
+        <EntityTypeShape EntityType="ABCLogisticsModel.Account" Width="1.5" PointX="3.75" PointY="7.875" Height="5.8263151041666674" />
+        <EntityTypeShape EntityType="ABCLogisticsModel.ReportColumn" Width="1.5" PointX="5.75" PointY="0.75" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="ABCLogisticsModel.Service" Width="1.5" PointX="3.75" PointY="14.875" Height="3.9033007812500014" />
+        <EntityTypeShape EntityType="ABCLogisticsModel.Shipment" Width="1.5" PointX="6" PointY="5.375" Height="10.826152343750003" />
+        <EntityTypeShape EntityType="ABCLogisticsModel.Terminal" Width="1.5" PointX="0.75" PointY="5.75" Height="5.4417122395833317" />
+        <EntityTypeShape EntityType="ABCLogisticsModel.UserReportColumn" Width="1.5" PointX="7.75" PointY="0.75" Height="1.7879850260416674" />
+        <AssociationConnector Association="ABCLogisticsModel.FK_Shipments_Accounts" >
+          <ConnectorPoint PointX="5.25" PointY="10.788157552083334" />
+          <ConnectorPoint PointX="6" PointY="10.788157552083334" />
+        </AssociationConnector>
+        <AssociationConnector Association="ABCLogisticsModel.FK_Shipments_Accounts1" >
+          <ConnectorPoint PointX="5.25" PointY="9.2690787760416669" />
+          <ConnectorPoint PointX="6" PointY="9.2690787760416669" />
+        </AssociationConnector>
+        <AssociationConnector Association="ABCLogisticsModel.FK_Shipments_Accounts2" >
+          <ConnectorPoint PointX="5.25" PointY="12.307236328125" />
+          <ConnectorPoint PointX="6" PointY="12.307236328125" />
+        </AssociationConnector>
+        <AssociationConnector Association="ABCLogisticsModel.FK_Shipments_Accounts3" >
+          <ConnectorPoint PointX="5.25" PointY="11.547696940104167" />
+          <ConnectorPoint PointX="6" PointY="11.547696940104167" />
+        </AssociationConnector>
+        <AssociationConnector Association="ABCLogisticsModel.FK_Shipments_Accounts4" >
+          <ConnectorPoint PointX="5.25" PointY="10.0286181640625" />
+          <ConnectorPoint PointX="6" PointY="10.0286181640625" />
+        </AssociationConnector>
+        <AssociationConnector Association="ABCLogisticsModel.FK_Shipments_Services" >
+          <ConnectorPoint PointX="5.25" PointY="15.538076171875002" />
+          <ConnectorPoint PointX="6" PointY="15.538076171875002" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ABCLogisticsModel.ShipmentReportView" Width="1.5" PointX="8.375" PointY="3.75" Height="4.4802050781250031" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

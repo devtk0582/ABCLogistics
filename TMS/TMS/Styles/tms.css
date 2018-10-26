@@ -1,0 +1,377 @@
+﻿/*web fonts*/
+@import url(http://fonts.googleapis.com/css?family=Marcellus+SC);
+@import url(http://fonts.googleapis.com/css?family=Arapey);
+/****************/
+
+.main_body
+        {
+            font-family: Verdana, Geneva, sans-serif;
+            font-size: 12px;
+            font-style: normal;
+            line-height: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-align: left;
+            border: thin solid #CCC;
+            list-style-type: square;
+            z-index: auto;
+            width: 85%;
+            color: black;
+}
+
+
+.login_header
+{
+    font-weight: bold; 
+    color: White;
+    font-family: 'Marcellus SC', Verdana, serif;
+    font-size: 14px;
+    padding: 5px, 0px, 5px, 15px;
+    height: 32px;
+    letter-spacing: 5;
+}
+
+.login_table_row
+{
+  padding: 2px 15px 2px 15px;
+}
+
+#login_table
+{
+    font-size: 12px; 
+    width: 350px;
+    background-color: #EAE8DD;
+}
+
+.inputTransStyle input
+{
+    background-color: transparent;
+}
+
+.login_button
+{
+    background-color: #6F85FF;
+    font-size: 12px;
+    color: White;
+    text-decoration:none;
+    padding: 3px 10px 3px 10px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+}
+
+.popupBG
+{
+    background-color: #333333;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+}
+
+.modalPopup
+{
+    background-color: #FFFFFF;
+    border: solid 1px #CCCCCC;
+    padding: 3px;
+}
+   
+.jquery-safari-checkbox 
+{
+    display: inline; 
+    font-size: 16px; 
+    line-height: 16px; 
+    cursor: pointer; 
+    cursor: hand;
+}
+.jquery-safari-checkbox .mark {display: inline;}
+
+.jquery-safari-checkbox img 
+{
+    vertical-align: middle; 
+    width: 16px; 
+    height: 16px;
+    }
+.jquery-safari-checkbox img
+{
+    background: transparent url(../Images/safari-checkbox.png) no-repeat;
+    }
+
+.jquery-safari-checkbox img{
+	background-position: 0px 0px;
+}
+.jquery-safari-checkbox-hover img{
+	background-position: -16px 0px;
+}
+.jquery-safari-checkbox-checked img{
+	background-position: 0px -16px;
+}
+.jquery-safari-checkbox-checked .jquery-safari-checkbox-hover img {
+	background-position: -16px -16px;
+}
+
+.jquery-safari-checkbox-disabled img{
+	background-position: 0px -32px;
+}
+.jquery-safari-checkbox-checked .jquery-safari-checkbox-disabled img{
+	background-position: 0px -48px;
+}
+
+/********* Arrow Box *********************/
+.arrow_box {
+	position: absolute;
+    z-index: 1;
+	background: #c2e1f5;
+	color: Black;
+	border: 4px solid #c2e1f5;
+}
+.arrow_box:after, .arrow_box:before {
+	bottom: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-bottom-color: #c2e1f5;
+	border-width: 15px;
+	left: 50%;
+	margin-left: -15px;
+}
+.arrow_box:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-bottom-color: #c2e1f5;
+	border-width: 16px;
+	left: 50%;
+	margin-left: -16px;
+}
+
+.arrow_box_container
+{
+    position: relative;
+    top: 15px;
+}
+
+.sign_out_style
+{
+    color: White;
+    background-color: #86BF2E;
+    font-size: 10pt;
+    border:1px solid #000000;
+    text-decoration:none;
+    padding: 3px 10px 3px 10px;
+}
+
+.arrow_down {
+    width: 0; 
+	height: 0; 
+	float: right;
+	line-height: 32;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-top: 7px solid white;
+}
+
+
+/*********************************/
+
+/* User Control Style */
+
+   .PopupFormTitleStyle
+{
+        background-color: #AB3C2B;
+    color: White;
+    height: 25px;
+    padding: 0 3px 0 3px;
+    font-weight: bold;
+}
+
+.PopupFormBG
+{
+	border:solid 1px #73c8f0;
+	background-color: #CCDCE9;
+	height: 100%;
+	width: 100%;
+	color: Black;
+	text-align:left;
+}
+
+
+
+.PopupFormButton
+{
+    background-color: #86BF2E;
+    font-size: 10pt;
+    color: White;
+    border:1px solid #000000;
+    text-decoration:none;
+    padding: 3px 10px 3px 10px;
+    border-radius: 5px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 5px;
+}
+
+.PopUpFormMainTbl
+{
+    text-align: left;
+}
+
+/************************************/
+
+/*** Carousel Menus ***/
+
+.roundabout-holder {
+			padding: 0;
+			margin: 0 auto;
+			height: 50px;
+			width: 450px;
+		}
+		
+		.roundabout-moveable-item {
+			height: 40px;
+			width: 80px;
+			cursor: pointer;
+			border: 0px;
+			display:block;
+			margin: 0px;
+		}
+		
+		.roundabout-moveable-item img {
+			height: 100%;
+			width: 100%;
+			border : 0;
+		}
+		
+		.roundabout-moveable-item a {
+			text-decoration: none;
+			border : 0;
+		}
+		
+		.roundabout-in-focus {
+			cursor: auto;
+			width: 120px;
+			height: 80px;
+		}
+		
+		#carousel-descriptions {
+			list-style:none;
+			display:block;
+			width:1000px;
+			margin:25px auto;
+			padding:0;
+		}
+		
+		#carousel-descriptions li {
+			font-size:16px;
+			font-weight:bold;
+			text-align:center;
+			display:none;
+			color: Black;
+		}
+		
+		#carousel-descriptions li.current {
+			display:block;
+		}
+		
+		#carousel-controls {
+			max-width:900px;
+			width:auto;
+			margin:25px auto;
+			overflow:auto;
+			border-collapse:collapse;
+			text-align:center;
+		}
+		
+		#carousel-controls span {
+			width:120px;
+			display:inline-block;
+			font-size:11px;
+			text-align:center;
+			margin:0 5px;
+			padding:5px;
+			cursor:pointer;
+			border:1px solid black;
+			background:#86BF2E;		
+			color: White;	
+		}
+		/*
+		#carousel-controls td span {
+			font-size:14px;
+			text-align:center;
+			margin:0 5px;
+			padding:5px;
+			cursor:pointer;
+			border:1px solid black;
+			background:#333;
+		}*/
+		
+#carousel-controls .current {
+			background:#96EEF7;
+			color: #412D2D;
+			border-color:#400;
+}
+		
+/*********************/
+
+/**** Regions ***/
+.content_manager_container
+{
+    display: inline-block;
+    border: 2px solid gray;
+    background-color: White;   
+    height: 400px;
+    width: 49%;
+}
+
+.dashboard_container
+{
+    background-color: white;
+}
+/***********************/
+
+/******Dashboard*******/
+.dashboard_header
+{
+    background-color: #3580B7;
+    color: White;
+    height: 25px;
+    padding: 0 3px 0 3px;
+    font-weight: bold;
+}
+
+/***********************/
+
+
+/********Side Menus ************/
+.side_menus_table
+{
+    width: 100%;    
+    font-size: 16px;
+    font-family: 'Arapey', Verdana, cursive;
+}
+
+.side_menus_table a
+{
+    color: Black;
+    font-family: 'Arapey', Verdana, cursive;
+}
+
+.side_menus_table_gray_bg
+{
+    background-color: #B5ACA7;
+    width: 100%;
+    height: 45px;
+}
+
+.separator
+{
+    height: 5px;   
+}
+
+.side_menus_table td
+{
+    padding-left: 5px;
+    vertical-align: middle;
+}
+/*******************************/
