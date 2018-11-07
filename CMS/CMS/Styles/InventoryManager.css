@@ -1,0 +1,27 @@
+﻿.addNewItemInv
+{
+    display:block;
+    background-image:url('../Images/buttonUpdate.jpg');
+    text-align:center;
+    font-size:9pt;
+    color:#ffffff;
+    border:1px solid #000000;
+    text-decoration:none;
+    padding: 2px 0px 2px 0px;
+ 
+}
+
+
+.addSubCatLnkBtn2
+{  
+    display:block;
+    height:15px;
+    width:160px;  
+    background-image:url("../Images/buttonUpdate.jpg");
+    background-repeat:repeat-x;
+    text-align:center;
+    font-size:10pt;
+    color:#ffffff;
+    border:1px solid #000000;
+    text-decoration:none;      
+}   

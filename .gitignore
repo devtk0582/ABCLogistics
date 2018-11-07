@@ -27,3 +27,15 @@
 /CarrierIntegration/CarrierDevApp/obj/x86/Debug
 /CarrierIntegration/CarrierIntegrationCore/bin
 /CarrierIntegration/CarrierIntegrationCore/obj/Debug
+/CMS/.vs
+/CMS/Backup
+/CMS/Backup1
+/CMS/Backup2
+/CMS/CMS/bin
+/CMS/CMS/Labels
+/CMS/CMS/obj/Debug
+*.suo
+/CMS/CMS.DAL/bin/Debug
+/CMS/CMS.DAL/obj/Debug
+/CMS/CMS.DAL/CMS.DAL.csproj.user
+/CMS/UpgradeLog.htm

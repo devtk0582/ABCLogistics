@@ -1,0 +1,34 @@
+﻿*
+{
+    font-size:10pt;
+    font-family: Arial, Helvetica, sans-serif;
+	font-size:10pt;
+}
+
+.InsertNewColorLnkBtn
+{
+    display:block;
+    background-image:url('../Images/buttonUpdate.jpg');
+    background-repeat:repeat-x;
+    text-align:center;
+    font-size:10pt;
+    color:#ffffff;
+    border:1px solid #000000;
+    text-decoration:none;    
+    width:80px;
+    height:15px; 
+}
+
+.popupButtonColor
+{
+    display:block;
+    background-image:url('../Images/buttonUpdate.jpg');
+    background-repeat:repeat-x;
+    text-align:center;
+    font-size:10pt;
+    color:#ffffff;
+    border:1px solid #000000;
+    text-decoration:none;    
+    width:60px; 
+    height:15px;   
+}

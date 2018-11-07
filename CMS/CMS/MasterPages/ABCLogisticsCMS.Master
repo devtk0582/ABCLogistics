@@ -1,0 +1,139 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ABCLogisticsCMS.Master.cs" Inherits="CMS.MasterPages.ABCLogisticsCMS" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/ABCLogisticsCMS.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/Sizes.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/Colors.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/Categories.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/InventoryManager.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/Menus.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/others.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="Page-Enter" content="blendTrans(Duration=0)"/>
+    <meta http-equiv="Page-Exit" content="blendTrans(Duration=0)"/>
+
+        <script type="text/javascript" language="javascript">
+            function OpenChildWindow(url, sFeature) {
+                varnew = window.open(url, "varnew", sFeature);
+            }
+
+
+            function showDate(sender, args) {
+                if (sender._textbox.get_element().value == "") {
+                    var todayDate = new Date();
+                    sender._selectedDate = todayDate;
+                }
+            }
+
+            function HidePopup(id) {
+
+                $find(id).hide();
+
+            }
+        </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="body">
+    <form id="form1" runat="server" enctype="multipart/form-data">
+    <div class="page">
+    <table width="100%" cellpadding="0" cellspacing="0" style="border: thin solid #CCC;">
+        <tr runat="server" id="trHeader">
+            <td>
+            <table width="100%">
+                            <tr>
+                                <td align="left" width="180">
+                                                   <asp:Image ID="imgHeader" runat="server" Width="160" Height="65"/>   
+                                </td>
+                                <td align="left">
+                                   <asp:Label ID="lblHeader" runat="server" Font-Bold="true" ></asp:Label>
+                                </td>
+                                <td align="right" width="180">
+                                <asp:Label ID="lblwelcomeUser" runat="server" Text="Welcome"></asp:Label>
+                <br />
+                <asp:Label ID="lblcurrentDate" runat="server" ></asp:Label>
+                <br />
+                <asp:LinkButton ID="lkbtnSignOut" CssClass="logout" runat="server" 
+                    onclick="lkbtnSignOut_Click">Sign Out</asp:LinkButton>                
+                                </td>
+                            </tr>
+                        </table>
+            </td>
+        </tr>
+        <tr style="height: 18px;">
+            <td style="background-color: #003F75;" width="100%">
+            <ul id="menu">    
+           <asp:Repeater ID="rptMainMenu" runat="server" OnItemCommand="rptMainMenu_ItemCommand">        
+           <ItemTemplate>            
+           <li> 
+               <asp:LinkButton ID="lnk" runat="server" CommandArgument = '<%# Bind("Menu_Id") %>' CommandName='<%# Bind("Screen_Url") %>' text='<%# Bind("Menu_name") %>' ></asp:LinkButton>
+             </li>        
+            </ItemTemplate>        
+            </asp:Repeater></ul>
+                            <%--<asp:Menu ID="MainMenu" runat="server" Orientation="Horizontal" SkipLinkText="" 
+                                Target="_self" Width="100%" OnMenuItemClick="MainMenu_MenuItemClick">
+                                <Items>
+                                    
+                                </Items>
+                                <StaticHoverStyle ForeColor="#005DCE"  />
+                                <StaticMenuItemStyle Width="100px" Height="25px"
+                                    Font-Names="Lucida Grande, Verdana, sans-serif" BackColor="#479BE3" 
+                                    ForeColor="#FFFFFB" HorizontalPadding="20px" Font-Size="11"/>
+                                <StaticSelectedStyle BackColor="#A7D6FF" ForeColor="Black" />
+                            </asp:Menu>--%>
+             
+        </td>
+        </tr>
+        <tr>
+            <td>
+            <div style="height: 5px; background-color: #BDD1E1;" >
+        </div>
+            </td>
+        </tr>
+        <tr style="height: 25px">
+        <td style="background-color: #88B6DF;" width="100%">
+  
+           <ul id="menu1" >
+    <asp:Repeater ID="rptsubMenu" runat="server" OnItemCommand="rptsubMenu_ItemCommand" 
+                   onitemdatabound="rptsubMenu_ItemDataBound" >        
+           <ItemTemplate>            
+           <li>
+             <asp:LinkButton ID="lnk" runat="server" CommandArgument = '<%# Bind("Menu_Id") %>' CommandName='<%# Bind("Screen_Url") %>' text='<%# Bind("Menu_name") %>' ></asp:LinkButton> 
+             </li>        
+            </ItemTemplate>       
+            </asp:Repeater>
+
+</ul> 
+        </td>
+        </tr>
+        <tr>
+        <td>
+         <div class="main"  >
+        <asp:Label runat='server' ID="lblErr" ForeColor="Red"></asp:Label>
+        <ajax:ToolkitScriptManager ID="ToolkitScriptManager" runat="server" />
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+    </div>
+        </td>
+        </tr>
+        <tr runat="server" id="trFooter">
+            <td>
+        <table width="100%">
+                            <tr>
+                                <td align="left" width="180">
+                                    <asp:Image ID="imgFooter" runat="server" Width="160" Height="40" />
+                                </td>
+                                <td align="center">
+                                    <asp:Label ID="lblFooter" Font-Bold="true" runat="server" Text="Footer Text"></asp:Label>
+                                </td>
+                            </tr>
+                        </table>     
+            </td>
+        </tr>
+    </table>
+    </div>
+    </form>
+</body>
+</html>

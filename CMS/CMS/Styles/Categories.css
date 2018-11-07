@@ -1,0 +1,13 @@
+﻿/*Catgories display on side menu */
+.repeaterLayout
+{
+    padding-top:50px;
+}
+
+.categoriesLnkLayout
+{
+    text-decoration:none;
+    color:#FF0066;
+    font-size:11pt;
+    font-weight:bold;
+}

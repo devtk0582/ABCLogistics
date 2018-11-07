@@ -1,0 +1,93 @@
+﻿div.divlbs a:link 
+{
+	text-decoration: none;
+}
+div.divlbs  a:visited {
+	text-decoration: none;
+}
+div.divlbs a:hover {
+	text-decoration: underline;
+}
+div.divlbs  a:active {
+	text-decoration: none;
+}
+
+.stylesheet {
+				font-family: verdana;
+				font-size: 20px;
+				font-style: normal;
+				line-height: normal;
+				font-weight: normal;
+				font-variant: normal;
+				text-align: center;
+				border: thin solid #CCC;
+				list-style-type: square;
+				z-index: auto;
+				width: 80%;
+				color: #668FCC;
+}
+
+.button1{
+				background: #0066CC;
+				padding: 3px 5px 3px 5px;
+				width: 70px;
+				font-family: Candara;
+				font-size: 12px;
+				font-weight: bold;
+				color: #FFFFFF;
+				text-align: center;
+				border-radius: 5px;
+				border-radius: 5px;
+				-moz-border-radius: 5px;
+				-moz-border-radius: 5px;
+				-webkit-border-radius: 5px;
+				-webkit-border-radius: 5px;
+}
+
+.pagingStyle
+{
+    border: solid 1px Black;
+    text-decoration: none;
+    padding: 0 5px 0 5px;
+}
+
+.pagingCurrentStyle
+{
+    border: solid 1px #778899;
+    background-color: Black;
+    color: White;
+    padding: 0 5px 0 5px;
+}
+
+.numeric_button
+{
+    color: Blue;    
+    font-family:Arial;
+    font-weight:bold;    
+    padding: 0 5px 0 5px;  
+    border: solid 1px Black;  
+    text-decoration: none;
+}
+.current_page
+{
+    background-color:#09151F;
+    color:#FFFFFF;    
+    font-family:Arial;
+    font-weight:bold;    
+    padding: 0 5px 0 5px;  
+    border: solid 1px Black;   
+    text-decoration: none;
+}
+.next_button
+{
+    background-color:#1F3548;
+    color:#FFFFFF;    
+    font-family:Arial;
+    font-weight:bold;    
+    padding:2px;    
+}
+
+.LogInFontStyle
+{
+    font-size: 12px;
+}

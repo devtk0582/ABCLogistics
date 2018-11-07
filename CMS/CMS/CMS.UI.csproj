@@ -1,0 +1,606 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{29C3A6FF-7CC5-4B82-8FB6-D4097EDB5336}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CMS</RootNamespace>
+    <AssemblyName>CMS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\DLL\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=4.1.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Users\Summitworks\Documents\Visual Studio 2010\Projects\jiushizhutk.com\DashBoardApp\bin\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="SBA.DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CMS.DAL\bin\Debug\SBA.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\ASPNETDB.MDF" />
+    <Content Include="App_Data\aspnetdb_log.ldf">
+      <DependentUpon>ASPNETDB.MDF</DependentUpon>
+    </Content>
+    <Content Include="Catalog\CartAdd.aspx" />
+    <Content Include="Catalog\Categories.aspx" />
+    <Content Include="Catalog\CheckOut.aspx" />
+    <Content Include="Catalog\Colors.aspx" />
+    <Content Include="Catalog\EditProduct.aspx" />
+    <Content Include="Catalog\InventoryManager.aspx" />
+    <Content Include="Catalog\Products.aspx" />
+    <Content Include="Catalog\ProductSalesRep.aspx" />
+    <Content Include="Catalog\Sizes.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Images\001.JPG" />
+    <Content Include="Images\002.JPG" />
+    <Content Include="Images\003.JPG" />
+    <Content Include="Images\004.JPG" />
+    <Content Include="Images\005.JPG" />
+    <Content Include="Images\006.JPG" />
+    <Content Include="Images\007.jpg" />
+    <Content Include="Images\008.JPG" />
+    <Content Include="Images\01.JPG" />
+    <Content Include="Images\02.jpg" />
+    <Content Include="Images\arrow.jpg" />
+    <Content Include="Images\back.png" />
+    <Content Include="Images\body-dead--bg.JPG" />
+    <Content Include="Images\body-tontent-bg.JPG" />
+    <Content Include="Images\bt-tb-bg.jpg" />
+    <Content Include="Images\buttonSearch.png" />
+    <Content Include="Images\buttonUpdate.jpg" />
+    <Content Include="Images\button_bg.JPG" />
+    <Content Include="Images\Calendar_scheduleHS.png" />
+    <Content Include="Images\cancel.png" />
+    <Content Include="Images\categoryHeader.JPG" />
+    <Content Include="Images\close.GIF" />
+    <Content Include="Images\customer-body-header-bg.JPG" />
+    <Content Include="Images\down-arrow.gif" />
+    <Content Include="Images\gridViewHeader.jpg" />
+    <Content Include="Images\hedder-bg.jpg" />
+    <Content Include="Images\hr.JPG" />
+    <Content Include="Images\line.JPG" />
+    <Content Include="Images\logo.gif" />
+    <Content Include="Images\menu-btn.JPG" />
+    <Content Include="Images\next.png" />
+    <Content Include="Images\no-image.png" />
+    <Content Include="Images\progress.gif" />
+    <Content Include="Images\put-away.png" />
+    <Content Include="Images\Put_away.png" />
+    <Content Include="Images\Put_away1.png" />
+    <Content Include="Images\Reciving.png" />
+    <Content Include="Images\Reciving1.png" />
+    <Content Include="Images\save.png" />
+    <Content Include="Images\searchHeader.jpg" />
+    <Content Include="Images\staging.png" />
+    <Content Include="Images\staging1.png" />
+    <Content Include="Images\staging1_0.png" />
+    <Content Include="Images\sub-btn-bg.jpg" />
+    <Content Include="Images\sub-menu-btn.jpg" />
+    <Content Include="Images\sub-menu-layout.JPG" />
+    <Content Include="Images\up-arrow.gif" />
+    <Content Include="Images\up-down-arrow.gif" />
+    <Content Include="Orders\OrderDetail.aspx" />
+    <Content Include="Orders\Orders.aspx" />
+    <Content Include="Orders\PrintInvoice.aspx" />
+    <Content Include="Reports\InventoryReport.aspx" />
+    <Content Include="Reports\SalesReport.aspx" />
+    <Content Include="Settings\Addresses.aspx" />
+    <Content Include="Settings\BillingCodes.aspx" />
+    <Content Include="Settings\Manufacturers.aspx" />
+    <Content Include="Settings\Packagings.aspx" />
+    <Content Include="Settings\ShippingClasses.aspx" />
+    <Content Include="Settings\ShippingMethods.aspx" />
+    <Content Include="Settings\Users.aspx" />
+    <Content Include="Styles\Categories.css" />
+    <Content Include="Styles\Colors.css" />
+    <Content Include="Styles\InventoryManager.css" />
+    <Content Include="Styles\Menus.css" />
+    <Content Include="Styles\newCMS.css" />
+    <Content Include="Styles\others.css" />
+    <Content Include="Styles\ABCLogisticsCMS.css" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Styles\Sizes.css" />
+    <Content Include="Styles\UserControls.css" />
+    <Content Include="UserControls\AddAddresses.ascx" />
+    <Content Include="UserControls\AddBillingCode.ascx" />
+    <Content Include="UserControls\AddManufacturer.ascx" />
+    <Content Include="UserControls\AddPackaging.ascx" />
+    <Content Include="UserControls\AddShippingClass.ascx" />
+    <Content Include="UserControls\AddShippingMethod.ascx" />
+    <Content Include="UserControls\AddUser.ascx" />
+    <Content Include="UserControls\ctlConfirm.ascx" />
+    <Content Include="UserControls\ctlEmptyCart.ascx" />
+    <Content Include="UserControls\ctlErrormsg.ascx" />
+    <Content Include="UserControls\EditBillingCode.ascx" />
+    <Content Include="UserControls\EditManufacturer.ascx" />
+    <Content Include="UserControls\EditPackaging.ascx" />
+    <Content Include="UserControls\EditShippingClass.ascx" />
+    <Content Include="UserControls\EditShippingMethod.ascx" />
+    <Content Include="UserControls\PrepareShipment.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Catalog\CartAdd.aspx.cs">
+      <DependentUpon>CartAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalog\CartAdd.aspx.designer.cs">
+      <DependentUpon>CartAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalog\Categories.aspx.cs">
+      <DependentUpon>Categories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalog\Categories.aspx.designer.cs">
+      <DependentUpon>Categories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalog\CheckOut.aspx.cs">
+      <DependentUpon>CheckOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalog\CheckOut.aspx.designer.cs">
+      <DependentUpon>CheckOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalog\Colors.aspx.cs">
+      <DependentUpon>Colors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalog\Colors.aspx.designer.cs">
+      <DependentUpon>Colors.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalog\EditProduct.aspx.cs">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalog\EditProduct.aspx.designer.cs">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalog\InventoryManager.aspx.cs">
+      <DependentUpon>InventoryManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalog\InventoryManager.aspx.designer.cs">
+      <DependentUpon>InventoryManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalog\Products.aspx.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalog\Products.aspx.designer.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalog\ProductSalesRep.aspx.cs">
+      <DependentUpon>ProductSalesRep.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalog\ProductSalesRep.aspx.designer.cs">
+      <DependentUpon>ProductSalesRep.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalog\Sizes.aspx.cs">
+      <DependentUpon>Sizes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalog\Sizes.aspx.designer.cs">
+      <DependentUpon>Sizes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerUI.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\ABCLogisticsCMS.Master.cs">
+      <DependentUpon>ABCLogisticsCMS.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\ABCLogisticsCMS.Master.designer.cs">
+      <DependentUpon>ABCLogisticsCMS.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Orders\OrderDetail.aspx.cs">
+      <DependentUpon>OrderDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Orders\OrderDetail.aspx.designer.cs">
+      <DependentUpon>OrderDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Orders\Orders.aspx.cs">
+      <DependentUpon>Orders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Orders\Orders.aspx.designer.cs">
+      <DependentUpon>Orders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Orders\PrintInvoice.aspx.cs">
+      <DependentUpon>PrintInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Orders\PrintInvoice.aspx.designer.cs">
+      <DependentUpon>PrintInvoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InventoryReport.aspx.cs">
+      <DependentUpon>InventoryReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\InventoryReport.aspx.designer.cs">
+      <DependentUpon>InventoryReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SalesReport.aspx.cs">
+      <DependentUpon>SalesReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\SalesReport.aspx.designer.cs">
+      <DependentUpon>SalesReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Addresses.aspx.cs">
+      <DependentUpon>Addresses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings\Addresses.aspx.designer.cs">
+      <DependentUpon>Addresses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\BillingCodes.aspx.cs">
+      <DependentUpon>BillingCodes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings\BillingCodes.aspx.designer.cs">
+      <DependentUpon>BillingCodes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Manufacturers.aspx.cs">
+      <DependentUpon>Manufacturers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings\Manufacturers.aspx.designer.cs">
+      <DependentUpon>Manufacturers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Packagings.aspx.cs">
+      <DependentUpon>Packagings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings\Packagings.aspx.designer.cs">
+      <DependentUpon>Packagings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\ShippingClasses.aspx.cs">
+      <DependentUpon>ShippingClasses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings\ShippingClasses.aspx.designer.cs">
+      <DependentUpon>ShippingClasses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\ShippingMethods.aspx.cs">
+      <DependentUpon>ShippingMethods.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings\ShippingMethods.aspx.designer.cs">
+      <DependentUpon>ShippingMethods.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Users.aspx.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings\Users.aspx.designer.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowImage.ashx.cs">
+      <DependentUpon>ShowImage.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowProductImage.ashx.cs">
+      <DependentUpon>ShowProductImage.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="TrustAllCertificatePolicy.cs" />
+    <Compile Include="UserControls\AddAddresses.ascx.cs">
+      <DependentUpon>AddAddresses.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddAddresses.ascx.designer.cs">
+      <DependentUpon>AddAddresses.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddBillingCode.ascx.cs">
+      <DependentUpon>AddBillingCode.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddBillingCode.ascx.designer.cs">
+      <DependentUpon>AddBillingCode.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddManufacturer.ascx.cs">
+      <DependentUpon>AddManufacturer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddManufacturer.ascx.designer.cs">
+      <DependentUpon>AddManufacturer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddPackaging.ascx.cs">
+      <DependentUpon>AddPackaging.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddPackaging.ascx.designer.cs">
+      <DependentUpon>AddPackaging.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddShippingClass.ascx.cs">
+      <DependentUpon>AddShippingClass.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddShippingClass.ascx.designer.cs">
+      <DependentUpon>AddShippingClass.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddShippingMethod.ascx.cs">
+      <DependentUpon>AddShippingMethod.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddShippingMethod.ascx.designer.cs">
+      <DependentUpon>AddShippingMethod.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddUser.ascx.cs">
+      <DependentUpon>AddUser.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddUser.ascx.designer.cs">
+      <DependentUpon>AddUser.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ctlConfirm.ascx.cs">
+      <DependentUpon>ctlConfirm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ctlConfirm.ascx.designer.cs">
+      <DependentUpon>ctlConfirm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ctlEmptyCart.ascx.cs">
+      <DependentUpon>ctlEmptyCart.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ctlEmptyCart.ascx.designer.cs">
+      <DependentUpon>ctlEmptyCart.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ctlErrormsg.ascx.cs">
+      <DependentUpon>ctlErrormsg.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ctlErrormsg.ascx.designer.cs">
+      <DependentUpon>ctlErrormsg.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EditBillingCode.ascx.cs">
+      <DependentUpon>EditBillingCode.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\EditBillingCode.ascx.designer.cs">
+      <DependentUpon>EditBillingCode.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EditManufacturer.ascx.cs">
+      <DependentUpon>EditManufacturer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\EditManufacturer.ascx.designer.cs">
+      <DependentUpon>EditManufacturer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EditPackaging.ascx.cs">
+      <DependentUpon>EditPackaging.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\EditPackaging.ascx.designer.cs">
+      <DependentUpon>EditPackaging.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EditShippingClass.ascx.cs">
+      <DependentUpon>EditShippingClass.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\EditShippingClass.ascx.designer.cs">
+      <DependentUpon>EditShippingClass.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EditShippingMethod.ascx.cs">
+      <DependentUpon>EditShippingMethod.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\EditShippingMethod.ascx.designer.cs">
+      <DependentUpon>EditShippingMethod.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PrepareShipment.ascx.cs">
+      <DependentUpon>PrepareShipment.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\PrepareShipment.ascx.designer.cs">
+      <DependentUpon>PrepareShipment.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\UPSShipWebReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PrintInvoice.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\cancel.psd" />
+    <Content Include="MasterPages\ABCLogisticsCMS.Master" />
+    <Content Include="ShowImage.ashx" />
+    <Content Include="ShowProductImage.ashx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\UPSShipWebReference\common.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\UPSShipWebReference\Error1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\UPSShipWebReference\IFWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\UPSShipWebReference\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\UPSShipWebReference\Ship.wsdl" />
+    <None Include="Web References\UPSShipWebReference\ShipAcceptResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UPSShipWebReference\ShipConfirmResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UPSShipWebReference\ShipmentResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UPSShipWebReference\ShipWebServiceSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\UPSShipWebReference\UPSSecurity.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CMS.DAL\CMS.DAL.csproj">
+      <Project>{E2B6A21A-259F-4C26-9F2F-845919AA36E3}</Project>
+      <Name>CMS.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Labels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="C:\Users\Summitworks\Downloads\Shipping_Pkg_Gnd\ShippingPACKAGE\PACKAGEWebServices\CodeSamples\Ship\DotNet\ShipWSSample\ShipWSSample\Web References\ShipWebReference\Ship.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\UPSShipWebReference\</RelPath>
+      <UpdateFromURL>C:\Users\Summitworks\Downloads\Shipping_Pkg_Gnd\ShippingPACKAGE\PACKAGEWebServices\CodeSamples\Ship\DotNet\ShipWSSample\ShipWSSample\Web References\ShipWebReference\Ship.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CMS_UPSShipWebReference_ShipService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51419</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

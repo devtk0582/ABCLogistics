@@ -1,0 +1,121 @@
+﻿*
+{
+    font-size:10pt;
+    font-family: Arial, Helvetica, sans-serif;
+	font-size:10pt;
+}
+
+.newSizeDisplay
+{
+
+    padding: 5px 0px 5px 0px;
+    width:100%
+}
+
+.newSizeLayout
+{
+    width:200px;
+    height:250px;
+    background-color:Lime;
+}
+
+.newSizeInput
+{
+    float:left;
+}
+
+.newSizelbl
+{
+    width:80px;
+}
+
+.newSizeTxtBx
+{
+    width:115px;
+}
+
+.gridViewlbl
+{
+    width:150px;
+}
+.sizeLayout
+{
+    overflow:auto;
+    width:auto;
+    height:500px;
+    padding:10px 20px 0px 20px;
+}
+
+/*GridView Design
+ -----------------*/
+
+.myGridView
+{ 
+    background-color: #fff;
+    border: solid 1px #fff;
+}
+
+.myGridView td 
+{ 
+    padding: 3px 5px 3px 5px;
+    border: solid 1px #fff; 
+    color:#000000; /* text color */
+    border-color:White;  
+}
+
+.myGridView th 
+{       
+    padding: 5px 5px 5px 5px;
+    background:#FFF380 url("../Images/gridViewHeader.jpg") repeat-x top;  /*#307D7E;*/
+    border: solid 1px #fff; 
+    font-weight:bold;  
+}
+
+.rowStyle
+{    
+    background:#EEEEEE; /*#F9B7FF url(grd_alt.png) repeat-x top; */
+    border: solid 1px #fff; 
+}
+
+.myGridView .altRowStyle 
+{ 
+    background:#AFC7C7;/* #F9B7FF url(grd_alt.png) repeat-x top; */     
+}
+
+.InsertNewSizeLnkBtn
+{
+    display:block;
+    background-image:url('../Images/buttonUpdate.jpg');
+    background-repeat:repeat-x;
+    text-align:center;
+    font-size:10pt;
+    color:#ffffff;
+    border:1px solid #000000;
+    text-decoration:none;    
+    width:80px;
+    height:15px;
+}
+
+.displayContentLayout
+{
+    Width:750px; 
+    height:20px; 
+    padding: 10px 10px 10px 0px;
+}
+
+.addNewItem
+{
+    display:block;
+    background-image:url('../Images/buttonUpdate.jpg');
+    text-align:center;
+    vertical-align:middle;
+    font-size:9pt;
+    color:#ffffff;
+    border:1px solid #000000;
+    text-decoration:none;
+    padding: 2px 0px 2px 0px;
+    width:120px;
+    height:15px;
+    margin-left: 24px;
+}
+
