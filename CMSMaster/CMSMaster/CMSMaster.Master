@@ -1,0 +1,165 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CMSMaster.master.cs"
+    Inherits="CMSMaster.CMSMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Content Management System</title>
+    <link rel="stylesheet" href="css/menu_style.css" type="text/css" />
+    <link rel="stylesheet" href="css/other.css" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <center>
+        <div class="stylesheet">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+                <tr>
+                    <td valign="top" bgcolor="#668FCC" colspan="2">
+                        <div class="divlbs">
+                           <asp:UpdateProgress ID="uppMain" runat="server">
+                            <ProgressTemplate>
+                                <iframe frameborder="0" src="about:blank" style="border: 0px; position: fixed; z-index: 9;
+                                    left: 0px; top: 0px; width: 100%; height: 100%; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75, FinishOpacity=0, Style=0, StartX=0, FinishX=100, StartY=0, FinishY=100);">
+                                </iframe>
+                                <div style="position: fixed; z-index: 10; left: 600px; top: 200px">
+                                    <p style="font-size: medium; color: Navy;">
+                                        Loading...</p>
+                                    <br />
+                                    <img src="images/ajax-loader2.gif" alt="" /></div>
+                            </ProgressTemplate>
+                        </asp:UpdateProgress>
+                            <table width="100%" border="0" cellpadding="5" cellspacing="2" bgcolor="#FFFFFF"
+                                style="font-size: 11px;">
+                                <tr>
+                                    <td width="18%" height="83">
+                                        <img src="Images/logo.gif" width="168" height="63" />
+                                    </td>
+                                    <td width="52%">
+                                        &nbsp;
+                                    </td>
+                                    <td width="30%" align="right" valign="bottom">
+                                        <%--<img src="images/arrow.jpg" width="15" height="14" />&nbsp;&nbsp;
+                                        <asp:LinkButton ID="lnkChangePwd" runat="server" ForeColor="#668FCC" OnClick="lnkChangePwd_Click">Change Password</asp:LinkButton>
+                                        <asp:Label ID="Label1" runat="server" Font-Bold="True" ForeColor="#668FCC">||</asp:Label>--%>
+                                        <asp:LinkButton ID="lnkLogOff" runat="server" ForeColor="#668FCC" OnClick="lnkLogOff_Click">Sign Out</asp:LinkButton>
+                                        <br />
+                                        <br />
+                                        <asp:Label ID="lblWelcomeMessage" runat="server" Font-Bold="True" ForeColor="#668FCC"></asp:Label><br />
+                                        <asp:Label ID="lblDate" runat="server" ForeColor="#668FCC"></asp:Label><br />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>                       
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="height: 35px; width: 100%; background-color: #AD0101;" align="right">
+                     <div>
+                            <asp:Label ID="CustomerName" runat="server" Text="NEW CUSTOMER" ForeColor="White"
+                                CssClass="divTitle"></asp:Label>
+                        </div>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td runat="server" width="80px" id="tdMenus" align="left" valign="top" style="background-color:#668FCC" >
+                            <asp:Menu ID="menus" runat="server" DynamicHorizontalOffset="2" Font-Names="Verdana"
+                                Font-Size="12px" Width="100%" Orientation="Vertical" SkipLinkText="" Target="_self">
+                                <Items>
+                                    <asp:MenuItem Text="Customers" Value="Details" NavigateUrl="~/Home.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="Details" Value="Details" NavigateUrl="~/CustomerDetails.aspx">
+                                    </asp:MenuItem>
+                                    <asp:MenuItem Text="Logos" Value="Logos" NavigateUrl="~/CustomerLogos.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="Messages" Value="Messages" NavigateUrl="~/CustomerMessages.aspx">
+                                    </asp:MenuItem>
+                                    <asp:MenuItem Text="Fonts" Value="Fonts" NavigateUrl="~/CustomerFonts.aspx"></asp:MenuItem>
+                                </Items>
+                                <StaticHoverStyle ForeColor="#005DCE" />
+                                <StaticMenuItemStyle HorizontalPadding="5" VerticalPadding="20" BackColor="#668FCC" ForeColor="#E3EEFF"
+                                    Height="35px" Font-Bold="true" Font-Size="12px" Font-Names="Lucida Grande, Verdana, sans-serif" />
+                                <StaticSelectedStyle BackColor="#E3EEFF" ForeColor="#668FCC" />
+                            </asp:Menu>                
+                    </td>
+                    <td valign="top" align="left" width="700px">
+                        <div class="divlbs">
+                            <asp:Label ID="lblErr" runat="server" ForeColor="Red" Font-Names="Verdana" Font-Size="Small"
+                                Visible="false"></asp:Label>
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </td>
+                </tr>
+                <%-- <tr>
+            <td>
+
+    <My:MasterPanel ID="ctlMPResetPwd" DragControlPro="lblDrag" runat="server" CancelBtnVisible="false" Heading="Warning!"
+     OKBtnVisible="false">
+    <body>
+        <table border="0" cellpadding="0" cellspacing="0" style="width: 100%" bgcolor="f4f5f7">
+            <tr>
+                <td>
+                    <asp:Label ID="lblDrag" runat="server"></asp:Label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan = "2">
+                    <asp:Label ID="lblError2" Font-Bold="true" runat="server" ForeColor="Red"></asp:Label>
+                </td>
+            </tr>
+            <tr><td style ="height:8px"></td></tr>
+            <tr>
+            <td>&nbsp;Current Password:<span class="errText">*</span>
+              </td>
+              <td>
+                <asp:TextBox ID="txtCurrentPwd" CssClass="input_text" MaxLength="8" runat="server" TextMode="Password"></asp:TextBox>&nbsp;
+              </td>
+            </tr>
+            <tr><td style ="height:4px"></td></tr>
+            <tr>
+              <td>&nbsp;New Password:<span class="errText">*</span>
+              </td>
+              <td>
+              <asp:TextBox ID="txtNewPws" CssClass="input_text" MaxLength="8" runat="server" TextMode="Password"></asp:TextBox>&nbsp;
+              </td>
+            </tr>
+            <tr><td style ="height:4px"></td></tr>
+            <tr>
+             <td>&nbsp;Retype New Password:&nbsp;<span class="errText">*</span>
+              </td>
+              <td>
+                <asp:TextBox ID="txtRetyprPwd" CssClass="input_text" MaxLength="8" runat="server" TextMode="Password"></asp:TextBox>&nbsp;
+              </td>
+            </tr>
+            <tr><td style ="height:8px"></td></tr>
+            <tr>
+              <td colspan="2" align="right" style="text-align:right"  >
+                <asp:LinkButton ID="btnSave" Text="Change" cssclass="button1" ForeColor="white"
+                    runat="server" />
+                <asp:LinkButton ID="btnCancel" Text="Close" cssclass="button1" ForeColor="white"
+                    runat="server" />
+              </td>
+            </tr>
+        </table>
+    </body>
+    </My:MasterPanel>
+
+            </td>
+        </tr>--%>
+                <tr>
+                    <td background="images/footerbg.gif" spry:repeat="x" height="50px" align="center" colspan="2"
+                        style="color: White">
+                        Copyright @ 2012 Powered by Ke Tang
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </center>
+    </form>
+</body>
+</html>

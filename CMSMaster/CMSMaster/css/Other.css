@@ -1,0 +1,423 @@
+﻿div.divlbs a:link {
+	color: #333333;
+	font-weight: bold;
+	text-decoration: none;
+}
+div.divlbs  a:visited {
+	color: #333333;
+	text-decoration: none;
+}
+div.divlbs a:hover {
+	color: #666666;
+	text-decoration: underline;
+}
+div.divlbs  a:active {
+	color: #CCCCCC;
+	text-decoration: none;
+}
+
+
+.mainDiv {
+	border: solid 1px darkgray;
+	width: 100%;
+}
+
+
+
+
+
+.headBlock {
+	padding-right: 10px;
+	padding-left: 10px;
+	margin: 0px;
+	height: 89px;
+	background-color: #F2F2F2;
+}
+.welcomeBlock {
+	height: 52px;
+	vertical-align: top;
+	/*background-image: url(../images/dwn.gif);
+	background-repeat: no-repeat;
+	background-position: 13px 7px;*/
+}
+.tabBlockBase {
+	height: 2px;
+	font-size: 2px;
+	border-bottom: solid 1px dimgray;
+	background-color: #376092;
+}
+
+
+
+
+
+.logoBig {
+    text-align:left;
+    font-size:32px;
+    font-weight:bolder;
+    /*background-image: url(../images/dwn_big.gif);*/
+    background-repeat:no-repeat;
+    padding-left:25px;
+    padding-right:85px;
+    padding-top:15px;
+}
+
+.MiniButton
+{
+    text-align:center;
+    vertical-align:middle;
+    text-decoration:none;
+    padding-top:1px;
+    font-size:0.9em;
+    font-weight:bolder;
+    padding-left: 8px;
+    padding-right: 8px;
+    color:#215968;
+	border: solid 1px #407D8D;
+    background-color: #BFBFBF;
+    height:15px;
+}
+
+.GrayButton, .MiniGrayButton, .GreenButton, .MiniGreenButton {
+    text-align:center;
+    vertical-align:middle;
+    text-decoration:none;
+    padding-top:3px;
+}
+.GrayButton, .GreenButton {
+    font-size:1.1em;
+    font-weight:bolder;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.MiniGrayButton, .MiniGreenButton
+{
+	font-size:1.0em;
+	font-weight:normal;
+    padding: 1px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.GrayButton, .MiniGrayButton {
+	color:#215968;
+	border: solid 1px #407D8D;
+    background-color: #3366CC;
+}
+.GrayButton:hover, .MiniGrayButton:hover {
+    background-color: #3366CC;
+}
+
+.GreenButton, .MiniGreenButton {
+	color: White;
+	border: solid 1px #18667B;
+    background-color: #31859C;
+}
+.GreenButton:hover, .MiniGreenButton:hover {
+    background-color: #479AB1;
+}
+
+
+
+
+
+.pageMainContainer {
+	padding: 0px;
+	margin: 0px;
+	background-color: #F2F2F2;
+	text-align: center;
+}
+
+.pageHeader, .pageHeaderHorBdr {
+    border: solid 0px #c0c0c0;   
+    padding: 4px;
+    font-size:1.1em;
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight:bolder;
+    background-color:#6690C0;                         		 
+    color:#000000;            
+}
+.pageHeaderHorBdr {
+    border-left: solid 0px;
+    border-right: solid 0px;
+    
+}
+.pageHeader2, .pageHeader2Broad, .pageHeader3, .pageHeader2Narrow 
+{
+	background-color: #376092;
+    color: White;
+    padding: 5px;
+    border: solid 0px dimgray;
+    font-size:1.1em;
+    font-weight:bolder;
+}
+.pageHeader3
+{
+	background-color: #5980B0;
+}
+.pageHeader2Narrow {
+	padding: 2px;
+}
+
+
+
+
+
+.pageLtrTD, .pageLitTD, .pageNrmTD, .pageDrkTD, .pageDkrTD, .pageLtrFBdrTD, .pageLitFBdrTD, .pageNrmFBdrTD, .pageDrkFBdrTD, .pageDkrFBdrTD, .pagePrmTD, .pageQcsTD, .pageSubHTD {
+	vertical-align: top;
+	height :25px;
+}
+.pageLtrTD, .pageLtrFBdrTD {
+	background-color: #EDF2F8;
+	border-top: solid 1px #F2F2F2;
+	border-bottom: solid 1px #F2F2F2;
+}
+.pageLitTD {
+	background-color: #BED0E4;
+	border-top: solid 1px #E9E9E9;
+	border-bottom: solid 1px #E9E9E9;
+}
+.pageNrmTD, .pageNrmFBdrTD {
+	color: White;
+	background-color: #00CC5C;
+	border-bottom: solid 1px #00CC5C;
+}
+.pagePrmTD {
+	color: #17375E;
+	background-color: #80B579;
+	border-bottom: solid 1px #80B579;
+}
+.pageQcsTD {
+	color: White;
+	background-color: #80B579;
+	border-bottom: solid 1px #80B579;
+}
+.pageDrkTD, .pageDrkFBdrTD {
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #6690C0;
+	border-bottom: solid 0px #F7D33B;
+}
+.pageDkrTD, .pageDkrFBdrTD 
+{
+	color: #17375E;
+	font-weight: bold;
+	background-color: #93CDDD;
+	border-bottom: solid 0px #93CDDD;
+}
+.pageSubHTD, .pageSubHFBdrTD
+{
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #54ADAD;
+	border-bottom: solid 0px #54ADAD;
+}
+.aaa, .aaaaa 
+{
+	color: #17375E;
+	font-weight: bold;
+	background-color: #93CDDD;
+	border-bottom: solid 0px #93CDDD;
+}
+.fldDescText {
+    font-weight:normal;
+    color:black;
+    width:1%;
+    text-align:left;
+    padding-left:10px;
+    vertical-align: top;
+}
+.fldDescText a 
+{
+    color:#000060;
+    text-decoration:underline;
+}
+.fldDescText a:hover {
+    color: #0000A0;
+}
+
+
+
+.lnkBig {
+	font-size: 1.1em;
+	font-weight:bold;
+    color:#000040;
+    text-decoration:none;
+}
+.lnkBig:hover {
+    color: White;
+    text-decoration:underline;  
+}
+.lnk1, .lnk2 {
+	font-weight:normal;
+    color:#00FF33;
+    text-decoration:underline;           
+}
+.lnk1:hover {
+    color: #3F7C8C;
+}
+.lnk2:hover {
+    color: #3F7C8C;
+}
+
+
+
+
+
+.tblHeadText, .tblHeadTextTopBdr {
+    font-weight:bolder;
+    color:black;
+    text-align:left;
+    padding:3px;
+    padding-left:5px;
+    padding-right:5px;
+    vertical-align: middle;
+    height: 17px;
+}
+.tblHeadTextTopBdr {
+    border-top: solid 1px #eeeeee;
+}
+.tblHeadRow {
+    background-color: #F2F2F2;
+    border-bottom: solid 1px #bbbbbb;
+}
+
+
+
+
+
+.pageFrameBtnContainer, .pageFrameBtnContainerDrk {
+    padding: 5px;
+    border: solid 0px #888888;
+    border-top: solid 0px #cccccc;
+    font-size:1.1em;
+}
+.pageFrameBtnContainerDrk 
+{
+	background-color: White;
+    border: solid 0px #666666;
+    border-top: solid 0px #aaaaaa;
+    font-weight: bold;
+}
+.pageFrameBtnTD {
+	padding-left: 5px;
+	font-family: Verdana, Geneva, sans-serif;
+}
+.pageLitBdr {
+	border: solid 0px #cccccc;
+}
+
+
+
+
+
+.popupBG {
+	background-color:#333333;
+	filter:alpha(opacity=70);
+	opacity:0.7;
+}
+.popupBG2 {
+	background-color:#333333;
+	filter:alpha(opacity=10);
+	opacity:0.1;
+}
+.modalPopup {
+	background-color:#FFFFFF;
+	border:solid 1px #CCCCCC;
+	padding:3px;
+	
+}   
+
+
+.cssHeader1 {
+	font-size: 14px;
+	font-weight: bold;
+}
+.errText {
+    font-weight:normal;
+    color:red;
+}
+.ActiveLeftSubMenus {
+	font-weight:normal;  
+    border-top: solid 1px #cccccc;
+    border-right: solid 1px #cccccc;
+    padding: 5px;
+	background:#FFF url("../images/sub_bt_bg.gif") top left repeat-x; 
+}
+
+  .input_text
+     {
+         border:1px solid #c0c0c0;
+         padding:2px;        
+         font-family: Verdana, Geneva, sans-serif;
+		 font-size: 11px;      
+         color:#000000;
+         background-color:#ffffff;
+    }
+    
+    .DropDown_Style
+     {
+         border:1px solid #c0c0c0;
+         padding:2px;        
+         font-family: Verdana, Geneva, sans-serif;
+		 font-size: 11px;      
+         color:#000000;
+         background-color:#ffffff;
+    }
+    .SearchListItem
+    {
+         font-family: Verdana, Geneva, sans-serif;
+ font-size: 11px;      
+  padding-top:2px;
+        
+    }
+    .SearchListItemHover
+    {
+          background-color: #668FCC;
+                   
+    }
+   
+.titleStyle
+{
+    padding: 15px 15px 10px 15px;
+    font-size: 12px;
+    color: #FFFFF6;
+    font-weight: bold;
+    height: 35px;
+    background-color: #467AC6;
+}
+
+.rbStyle input
+{
+    background-color: transparent;
+}
+
+.cbStyle input
+{
+    background-color: transparent;
+}
+
+
+.divTitle
+{
+    padding: 15px 15px 5px 15px;
+    font-size: 12px;
+    color: White;
+    font-weight: bold;
+}
+
+.lbStyle
+{
+    padding: 5px 15px 5px 15px;
+}
+
+.panelStyle fieldSet
+{
+    border: 2px solid Blue;
+}
+
+.panelStyle legend
+{
+    color: Maroon;
+    font-size: 12px;
+}

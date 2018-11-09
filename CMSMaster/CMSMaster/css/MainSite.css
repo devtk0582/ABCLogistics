@@ -1,0 +1,142 @@
+﻿
+.popupBG {
+	background-color:#333333;
+	filter:alpha(opacity=70);
+	opacity:0.7;
+}
+.popupBG2 {
+	background-color:#333333;
+	filter:alpha(opacity=10);
+	opacity:0.1;
+}
+.modalPopup {
+	background-color:#FFFFFF;
+	border:solid 1px #CCCCCC;
+	padding:3px;
+	
+}   
+div.menuNav
+{
+    width: 100%;
+    background-color: White;
+    height: 30px;
+    text-decoration: none;
+}
+div.menuNav a:link {
+	color: #333333;
+	font-weight: bold;
+	text-decoration: none;
+}
+div.menuNav  a:visited {
+	color: #333333;
+	text-decoration: none;
+}
+div.menuNav a:hover {
+	color: #666666;
+	text-decoration: underline;
+}
+div.menuNav  a:active {
+	color: #CCCCCC;
+	text-decoration: none;
+}
+
+.masterMenu{ 
+	display: block; 
+	float: left; 
+	margin:60 0 0 6px; 
+	}
+.masterMenu a   
+{
+    height: 28px;  
+	color: #CFF; 
+	text-decoration: none; 
+	display: block; 
+	float: left; 
+	line-height: 200%; 
+	padding: 10px 15px 0;  
+	}
+.masterMenu a:hover {
+	color: #000;
+	background:#FFF url("../images/current_menu-bg.gif") top left repeat-x; 
+	}
+.masterMenu a.current{ 
+	background:#FFF url("../images/current_menu-bg.gif") top left repeat-x; 
+	color:#000;
+	}
+
+.popupMenu a
+{
+    font-size: 12px;
+    height: 35px;
+    text-align: left;
+    width: 200px;
+    background-color: #E3EEFF;
+    color: #668FCC;
+    font-family: Lucida Grande, Verdana, sans-serif;
+    font-weight: bold;
+    text-decoration: none; 
+}
+
+.popupMenu a:hover
+{
+    color: #000;
+}
+.popupMenu tr
+{
+  width: 100%;
+  background-color: #FFF;
+}      
+
+.popupHover
+{
+    height: 28px;
+	color: #FFF; 
+	text-decoration: none;
+	float: left; 
+	line-height: 200%; 
+	padding: 10px 15px 0; 
+} 
+
+.masterSubMenu a
+{
+    height: 28px;
+    color: #668FCC;
+    font-family: Lucida Grande, Verdana, sans-serif;
+    font-weight: bold;
+    text-decoration: none; 
+        margin: 0 0 0 10px; 
+}
+
+.masterSubMenu tr
+{
+    background-color: #E3EEFF;
+    text-align: left; 
+
+}
+
+.masterSubMenu a:hover
+{
+    color: #000;
+}
+
+
+.masterBg
+{
+
+    width: 100%;
+	height: 35px;
+	background: #FFF url("../images/menu-bg.gif") top left repeat-x; 
+	font-size: 12px; 
+	font-family: "Lucida Grande", Verdana, sans-serif; 
+	font-weight: bold; 
+	list-style-type: none; 
+	margin: 0; 
+	padding: 0; 
+}
+
+ 
+table.masterMenu tr td table tr td 
+{
+    font-size: 12px;
+    font-weight: bold;
+}

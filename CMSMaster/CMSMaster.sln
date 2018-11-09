@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMSMaster", "CMSMaster\CMSMaster.csproj", "{C79F2C25-E6CD-4A3E-B143-8C18B10F11D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMSMaster.DAL", "CMSMaster.DAL\CMSMaster.DAL.csproj", "{62C2FF84-A547-446C-93A5-966CBDBBFF50}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C79F2C25-E6CD-4A3E-B143-8C18B10F11D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C79F2C25-E6CD-4A3E-B143-8C18B10F11D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C79F2C25-E6CD-4A3E-B143-8C18B10F11D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C79F2C25-E6CD-4A3E-B143-8C18B10F11D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62C2FF84-A547-446C-93A5-966CBDBBFF50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62C2FF84-A547-446C-93A5-966CBDBBFF50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62C2FF84-A547-446C-93A5-966CBDBBFF50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62C2FF84-A547-446C-93A5-966CBDBBFF50}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2861F2CB-EB26-431E-A474-0E545062E250}
+	EndGlobalSection
+EndGlobal

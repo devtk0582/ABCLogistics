@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="C:\Users\Summitworks\Documents\Project_Ke\SBA\SBA-CMS\SBA_CMS" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/CMSMaster.DAL.pdb" publishTime="05/16/2012 10:21:02" />
+    <file relUrl="images/arrow_up.gif" publishTime="04/05/2012 10:36:10" />
+    <file relUrl="images/submenu_bg.gif" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/trasportation 1.gif" publishTime="04/04/2012 14:29:08" />
+    <file relUrl="images/Run_Reports.png" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="Default/sbacms.gif" publishTime="04/06/2012 12:00:07" />
+    <file relUrl="images/preview_bt.jpg" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/search.gif" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/pro.jpeg" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/login.jpg" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/cheg_Address.png" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/New Image1.png" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/Next_bt.jpg" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/cancle_bt.jpg" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="Home.aspx" publishTime="05/16/2012 10:21:37" />
+    <file relUrl="Web.config" publishTime="05/16/2012 11:03:10" />
+    <file relUrl="images/sub_bt_bg.png" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/go.png" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/sign_up1.jpg" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/arrow_down.gif" publishTime="04/05/2012 10:36:10" />
+    <file relUrl="images/Customer.gif" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/retrieve Password.JPG" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/Accept Order.png" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/Attach_Doc.gif" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/Attach_Doc.png" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/ETA1.png" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/fast_forward.png" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/Add_Order.png" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/login_bt1.jpg" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/POD1.PNG" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/tdbg.png" publishTime="04/04/2012 14:29:08" />
+    <file relUrl="images/next1.png" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="CustomerDetails.aspx" publishTime="05/16/2012 10:23:16" />
+    <file relUrl="images/tl.gif" publishTime="04/04/2012 14:29:08" />
+    <file relUrl="images/skip-forward.png" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/paging-first.gif" publishTime="04/05/2012 10:36:10" />
+    <file relUrl="images/add_customer1.jpg" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/current-bg1.gif" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/save_bt.jpg" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="ClientBin/CMSMaster_SL.xap" publishTime="04/11/2012 13:46:20" />
+    <file relUrl="bin/AjaxControlToolkit.dll" publishTime="04/06/2012 13:45:19" />
+    <file relUrl="images/login_final.jpg" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/search.png" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/skip_forward.png" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/backword.png" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/search1.PNG" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="bin/SBA.DataAccess.dll" publishTime="06/02/2011 17:38:54" />
+    <file relUrl="images/logo.gif" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/bl.gif" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/refresh_bt1.jpg" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/Ascending.PNG" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/new_menu-bg.gif" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/inventory_1.gif" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/Cycle Count Setup'.PNG" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="bin/CMSMaster.DAL.dll" publishTime="05/16/2012 10:21:02" />
+    <file relUrl="bin/CMSMaster.dll" publishTime="05/16/2012 10:59:45" />
+    <file relUrl="images/Run_Reports1.png" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="CustomerFonts.aspx" publishTime="05/16/2012 10:23:17" />
+    <file relUrl="images/Style-Next-icon.png" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/sbacms2.gif" publishTime="04/04/2012 15:02:43" />
+    <file relUrl="images/Calcel.JPG" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/login_final.png" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/pdf.png" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="TestPage.aspx" publishTime="05/16/2012 10:22:21" />
+    <file relUrl="images/CC_document.PNG" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/retrieve Password1.JPG" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/progress.gif" publishTime="04/10/2012 16:30:46" />
+    <file relUrl="images/Down.png" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/hr_bg_2.jpg" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/menu-bg1.GIF" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/Cancel1.JPG" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/next.png" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/table_bg.jpg" publishTime="04/04/2012 14:29:08" />
+    <file relUrl="images/graph.jpg" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/ajax-loader2.gif" publishTime="04/23/2012 12:31:30" />
+    <file relUrl="images/menu-bg.gif" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/cancel_bt.jpg" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/paging-last.gif" publishTime="04/05/2012 10:36:10" />
+    <file relUrl="images/inventory.gif" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/Customers_bt1.JPG" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/Accept_Order.png" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/animatedBG.gif" publishTime="05/01/2012 15:51:27" />
+    <file relUrl="css/MainOthers.css" publishTime="04/04/2012 14:28:09" />
+    <file relUrl="Default/logo.gif" publishTime="04/06/2012 11:59:17" />
+    <file relUrl="images/ETA.png" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/Update_Address1.png" publishTime="04/04/2012 14:29:08" />
+    <file relUrl="images/03.jpg" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/login_bg.png" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/Customers_bt.JPG" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/hr_bg_1.jpg" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/Calendar_scheduleHS.png" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/details_1.GIF" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/Preview.png" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/Customer_bt.GIF" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/Ascending.gif" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/Modify items1.png" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/Accept Order.gif" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/go1.png" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/Add_note1.png" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="css/Other.css" publishTime="04/22/2012 18:02:48" />
+    <file relUrl="images/current-bg.gif" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/Change Address.PNG" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/add_customer.jpg" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/bt_bg.jpg" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/Cancel_order1.png" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/Change Address1.png" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/New Image.PNG" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/system acceses_1.gif" publishTime="04/04/2012 14:29:08" />
+    <file relUrl="images/08.jpg" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/01.jpg" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/Accept Order1.PNG" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/rewind.png" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/color_tabs_left.gif" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/trasportation.gif" publishTime="04/04/2012 14:29:08" />
+    <file relUrl="images/POD.png" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="Default.aspx" publishTime="05/16/2012 10:22:21" />
+    <file relUrl="images/123.gif" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/Add_note.png" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/ship_confirm.png" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/previous1.PNG" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/login_final.gif" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/Cancel_order.png" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="Scripts/jquery-1.4.1.js" publishTime="04/04/2012 13:55:34" />
+    <file relUrl="images/Reports.GIF" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/07.jpg" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/excelimg.jpg" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/Add _note.png" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/hr_bg.jpg" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/05.jpg" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/new_current-bg.gif" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/print1.PNG" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/cycle_count_setup.PNG" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/add_order1.png" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/Details.gif" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/Attach_Doc1.png" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="CustomerLogos.aspx" publishTime="05/16/2012 11:09:21" />
+    <file relUrl="images/Accept_Order1.png" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/warehouse.gif" publishTime="04/04/2012 14:29:08" />
+    <file relUrl="images/logo_Header.JPG" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/CC Setup'.png" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/footerbg.gif" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/upload.PNG" publishTime="04/04/2012 14:29:08" />
+    <file relUrl="Silverlight.js" publishTime="04/11/2012 12:44:36" />
+    <file relUrl="images/system acceses.gif" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/br.gif" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/Add _note.gif" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/page_search.png" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/Cancel.JPG" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/cancel.png" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/CC_document1.png" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="ShowImage.ashx" publishTime="04/10/2012 21:43:55" />
+    <file relUrl="images/sign_up.jpg" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/previous.PNG" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="AutoCompleteService.asmx" publishTime="04/09/2012 14:56:57" />
+    <file relUrl="Scripts/jquery-1.4.1-vsdoc.js" publishTime="04/04/2012 13:55:34" />
+    <file relUrl="images/ship_confirm1.png" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/warhsc ACK.png" publishTime="04/04/2012 14:29:08" />
+    <file relUrl="Scripts/jquery-1.4.1.min.js" publishTime="04/04/2012 13:55:34" />
+    <file relUrl="images/refresh_bt.jpg" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/login.png" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/print.png" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/Descending.gif" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/delete.gif" publishTime="04/20/2012 13:46:44" />
+    <file relUrl="images/skip_backward.png" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/Close1.JPG" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/login1.jpg" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/refresh.png" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/Close.jpg" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/download.png" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="css/MainSite.css" publishTime="04/20/2012 20:44:00" />
+    <file relUrl="images/CC Setup'1.PNG" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/System_Acceses_1.GIF" publishTime="04/04/2012 14:29:08" />
+    <file relUrl="images/color_tabs_right.gif" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/login_bt.jpg" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/save.PNG" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="css/preview.css" publishTime="04/23/2012 14:44:22" />
+    <file relUrl="images/Reports1.GIF" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/UP.PNG" publishTime="04/04/2012 14:29:08" />
+    <file relUrl="images/save.JPG" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/last.JPG" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="css/menu_style.css" publishTime="04/21/2012 19:02:59" />
+    <file relUrl="images/ajax-loader.gif" publishTime="04/05/2012 10:36:10" />
+    <file relUrl="images/warhsc ACK1.png" publishTime="04/04/2012 14:29:08" />
+    <file relUrl="CMSMaster.Master" publishTime="05/16/2012 10:01:26" />
+    <file relUrl="images/sbacms.gif" publishTime="04/04/2012 15:02:43" />
+    <file relUrl="images/excel.png" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/pdf1.png" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/Modify Items.png" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/search.JPG" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/System_Acceses.GIF" publishTime="04/04/2012 14:29:08" />
+    <file relUrl="images/skip-forward-icon.png" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/settings.gif" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/last.png" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="CustomerMessages.aspx" publishTime="05/16/2012 10:23:17" />
+    <file relUrl="images/tr.gif" publishTime="04/04/2012 14:29:08" />
+    <file relUrl="images/04.jpg" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/Update_address.PNG" publishTime="04/04/2012 14:29:08" />
+    <file relUrl="images/new customer.jpg" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/Modify Refrence.png" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="bin/CMSMaster.pdb" publishTime="05/16/2012 10:59:45" />
+    <file relUrl="images/02.jpg" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/delete_16x16.gif" publishTime="04/20/2012 13:48:32" />
+    <file relUrl="images/warehouse_1.gif" publishTime="04/04/2012 14:29:08" />
+    <file relUrl="images/Descending.png" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/forword.png" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/settings _1.GIF" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/Save1.JPG" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/Modify Refrence1.png" publishTime="04/04/2012 14:29:07" />
+    <file relUrl="images/Customer_bt1.GIF" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/expend.png" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="css/ddcolortabs.css" publishTime="04/04/2012 14:27:09" />
+    <file relUrl="images/06.jpg" publishTime="04/04/2012 14:29:06" />
+    <file relUrl="images/arrow.jpg" publishTime="04/04/2012 14:29:06" />
+  </publishProfile>
+</publishData>
