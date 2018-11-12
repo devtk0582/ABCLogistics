@@ -41,4 +41,7 @@ Carrier Integration project is to integrate third-party carriers' APIs for vario
 * Integrated DHL web services to get rates, order pickup, cancel pickup, order shipment and get landed cost.
 * Integrated FedEx web services to get rates, order pickup, cancel pickup and order shipment
 * Integrated UPS web sevices to get rates, order shipment
-
+* Integreated SBA web services for freight shipments
+* Dynamically select carrier for rating based on DHL / FedEx / UPS / SBA
+* Integrated duty calculator web service to calculate duties / taxes for international shipments
+* Automatically check carrier-specific rules to choose proper service levels
