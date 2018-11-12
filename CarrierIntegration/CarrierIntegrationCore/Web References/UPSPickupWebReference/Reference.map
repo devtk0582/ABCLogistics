@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/kt/Desktop/Shipping Web Service/UPS/2013/Pickup_Pkg_Gnd/Pickup_Pkg_Gnd/PickupforPACKAGEWebService/CodeSamples/Pickup/DotNet/PickupWSSample/PickupWSSample/Web References/PickupWebReference/UPSSecurity.xsd" filename="UPSSecurity.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/kt/Desktop/Shipping Web Service/UPS/2013/Pickup_Pkg_Gnd/Pickup_Pkg_Gnd/PickupforPACKAGEWebService/CodeSamples/Pickup/DotNet/PickupWSSample/PickupWSSample/Web References/PickupWebReference/common.xsd" filename="common.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="file:///C:/Users/kt/Desktop/Shipping Web Service/UPS/2013/Pickup_Pkg_Gnd/Pickup_Pkg_Gnd/PickupforPACKAGEWebService/CodeSamples/Pickup/DotNet/PickupWSSample/PickupWSSample/Web References/PickupWebReference/Pickup.wsdl" filename="Pickup.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/kt/Desktop/Shipping Web Service/UPS/2013/Pickup_Pkg_Gnd/Pickup_Pkg_Gnd/PickupforPACKAGEWebService/CodeSamples/Pickup/DotNet/PickupWSSample/PickupWSSample/Web References/PickupWebReference/Error1.1.xsd" filename="Error1.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/kt/Desktop/Shipping Web Service/UPS/2013/Pickup_Pkg_Gnd/Pickup_Pkg_Gnd/PickupforPACKAGEWebService/CodeSamples/Pickup/DotNet/PickupWSSample/PickupWSSample/Web References/PickupWebReference/PickupWebServiceSchema.xsd" filename="PickupWebServiceSchema.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

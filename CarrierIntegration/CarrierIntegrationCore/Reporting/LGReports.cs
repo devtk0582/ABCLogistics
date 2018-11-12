@@ -114,7 +114,7 @@ namespace CarrierIntegrationCore.Reporting
                     }
                 }
 
-                excelPackage.Workbook.Properties.Author = "SBA";
+                excelPackage.Workbook.Properties.Author = "ABC Logistics";
                 excelPackage.Save();
             }
         }

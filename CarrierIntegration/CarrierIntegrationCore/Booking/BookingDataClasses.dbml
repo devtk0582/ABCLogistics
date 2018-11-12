@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ABCLogisticsShippingDB_Target" Class="BookingDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LENOVO3OF3;Initial Catalog=ABCLogisticsShippingDB_Target;Integrated Security=True" SettingsObjectName="CarrierIntegrationCore.Booking.Properties.Settings" SettingsPropertyName="ABCLogisticsShippingDB_TargetConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.BookingCarriers" Member="BookingCarriers">
+    <Type Name="BookingCarrier">
+      <Column Name="CarrierID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BookingCustomerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CarrierName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AccountNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AccountName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="License" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="BookingCarrier_BookingService" Member="BookingServices" ThisKey="CarrierID" OtherKey="CarrierID" Type="BookingService" />
+      <Association Name="BookingCustomer_BookingCarrier" Member="BookingCustomer" ThisKey="BookingCustomerID" OtherKey="CustomerID" Type="BookingCustomer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BookingConditions" Member="BookingConditions">
+    <Type Name="BookingCondition">
+      <Column Name="BookingConditionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ConditionCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ConditionDescription" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="OriginCountry" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="DestCountry" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Association Name="BookingCondition_BookingService" Member="BookingServices" ThisKey="BookingConditionID" OtherKey="ConditionID" Type="BookingService" />
+    </Type>
+  </Table>
+  <Table Name="dbo.rates_ACI" Member="RatesACIs">
+    <Type Name="RatesACI">
+      <Column Name="id" Member="ID" Storage="_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="state" Member="State" Storage="_state" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="point" Member="Point" Storage="_point" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="zip_begin" Member="ZipBegin" Storage="_zip_begin" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="airp_code" Member="AirpCode" Storage="_airp_code" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="area" Member="Area" Storage="_area" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="zone" Member="Zone" Storage="_zone" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BookingRateStates" Member="BookingRateStates">
+    <Type Name="BookingRateState">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StateCode" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Region" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="BookingCustomer_BookingRateState" Member="BookingCustomer" ThisKey="CustomerID" OtherKey="CustomerID" Type="BookingCustomer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BookingRateTariffs" Member="BookingRateTariffs">
+    <Type Name="BookingRateTariff">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Service" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Weight" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Zone" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="Rate" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="BookingCustomer_BookingRateTariff" Member="BookingCustomer" ThisKey="CustomerID" OtherKey="CustomerID" Type="BookingCustomer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BookingRateZoneMat" Member="BookingRateZoneMats">
+    <Type Name="BookingRateZoneMat">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Zone" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="Coords" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="BookingCustomer_BookingRateZoneMat" Member="BookingCustomer" ThisKey="CustomerID" OtherKey="CustomerID" Type="BookingCustomer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BookingCustomerAccessorials" Member="BookingCustomerAccessorials">
+    <Type Name="BookingCustomerAccessorial">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AccessorialID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FromRegion" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="ToRegion" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="MinRate" Type="System.Decimal" DbType="Decimal(10,3)" CanBeNull="true" />
+      <Column Name="Rate" Type="System.Decimal" DbType="Decimal(10,3)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BookingRateRequests" Member="BookingRateRequests">
+    <Type Name="BookingRateRequest">
+      <Column Name="RequestID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RequestXML" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BookingAccessorials" Member="BookingAccessorials">
+    <Type Name="BookingAccessorial">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ServiceName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BookingRateBeyond" Member="BookingRateBeyonds">
+    <Type Name="BookingRateBeyond">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FromRegion" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="ToRegion" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="MinRate" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Rate" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Association Name="BookingCustomer_BookingRateBeyond" Member="BookingCustomer" ThisKey="CustomerID" OtherKey="CustomerID" Type="BookingCustomer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BookingCountries" Member="BookingCountries">
+    <Type Name="BookingCountry">
+      <Column Name="CountryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CountryName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Alpha2Code" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="Alpha3Code" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="Region" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BookingBookRequests" Member="BookingBookRequests">
+    <Type Name="BookingBookRequest">
+      <Column Name="BookID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BookXML" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="BookDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[order]" Member="Orders">
+    <Type Name="Order">
+      <Column Name="order_id" Member="OrderID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="user_id" Member="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="hbl_number" Member="HblNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="orig_airport" Member="OrigAirport" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="dest_airport" Member="DestAirport" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="service_id" Member="ServiceID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="shipper_id" Member="ShipperID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="consignee_id" Member="ConsigneeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="third_party" Member="ThirdParty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="shipper_reference" Member="ShipperReference" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="declared_value" Member="DeclaredValue" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ship_cod" Member="ShipCod" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ship_date" Member="ShipDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="req_del_date" Member="ReqDelDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ready_time" Member="ReadyTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="close_time" Member="CloseTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ship_description" Member="ShipDescription" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="dom_or_int" Member="DomOrInt" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="signature" Member="Signature" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="signature_img_id" Member="SignatureImgID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pod" Member="Pod" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="rcvd_date" Member="RcvdDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="rcvd_time" Member="RcvdTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="bill_to" Member="BillTo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="specialInstructions" Member="SpecialInstructions" Type="System.String" DbType="VarChar(600)" CanBeNull="true" />
+      <Column Name="internalReferenceNumber" Member="InternalReferenceNumber" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="emailStatusNotification" Member="EmailStatusNotification" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="internalReferenceNumber2" Member="InternalReferenceNumber2" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="internationalOrder" Member="InternationalOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="shipperCODType" Member="ShipperCODType" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="totalWeight" Member="TotalWeight" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="totalPieces" Member="TotalPieces" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="totalCharges" Member="TotalCharges" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="station" Member="Station" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="stationPhone" Member="StationPhone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="stationPhoneEx" Member="StationPhoneEx" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="revised" Member="Revised" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="trackAndConfirm" Member="TrackAndConfirm" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="isLTLShipment" Member="IsLTLShipment" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LTLCarrier" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="creditCardAnd3000" Member="CreditCardAnd3000" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="creditCardNumber" Member="CreditCardNumber" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ITAR" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Carnet" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Order_Freight" Member="Freights" ThisKey="OrderID" OtherKey="TransactionID" Type="Freight" />
+      <Association Name="User_Order" Member="User" ThisKey="UserID" OtherKey="UserID" Type="User" IsForeignKey="true" />
+      <Association Name="Service_Order" Member="Service" ThisKey="ServiceID" OtherKey="ServiceID" Type="Service" IsForeignKey="true" />
+      <Association Name="Consignee_Order" Member="Consignee" ThisKey="ConsigneeID" OtherKey="ConsigneeID" Type="Consignee" IsForeignKey="true" />
+      <Association Name="ABCLogisticsShipper_Order" Member="ABCLogisticsShipper" ThisKey="ShipperID" OtherKey="ShipperID" Type="ABCLogisticsShipper" IsForeignKey="true" />
+      <Association Name="BillTo_Order" Member="BillTo1" ThisKey="BillTo" OtherKey="Shortname" Type="BillTo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.freight" Member="Freights">
+    <Type Name="Freight">
+      <Column Name="freight_id" Member="FreightID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="transaction_id" Member="TransactionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="qty" Member="Qty" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="weight" Member="Weight" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="length" Member="Length" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="width" Member="Width" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="height" Member="Height" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Member="Description" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Association Name="Order_Freight" Member="Order" ThisKey="TransactionID" OtherKey="OrderID" Type="Order" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[user]" Member="Users">
+    <Type Name="User">
+      <Column Name="user_id" Member="UserID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="role_id" Member="RoleID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="passwd" Member="Passwd" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="email" Member="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="address" Member="Address" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="name" Member="Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="company" Member="Company" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ref_no" Member="RefNo" Storage="_Ref_no" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="origin" Member="Origin" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="labels" Member="Labels" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="station_email" Member="StationEmail" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="station_phone" Member="StationPhone" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="station_phone_ex" Member="StationPhoneEx" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="label_format" Member="LabelFormat" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="email_waybill" Member="EmailWaybill" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="email_for_waybill" Member="EmailForWaybill" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="customer_no" Member="CustomerNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="bill_to_number" Member="BillToNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="bill_to_name" Member="BillToName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="bill_to_address" Member="BillToAddress" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bill_to_contact" Member="BillToContact" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="show_shipper" Member="ShowShipper" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="default_service" Member="DefaultService" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ready_time" Member="ReadyTime" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="close_time" Member="CloseTime" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="spec_instr" Member="SpecInstr" Type="System.String" DbType="VarChar(600)" CanBeNull="true" />
+      <Column Name="email_status_updates" Member="EmailStatusUpdates" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ref_num_reqired" Member="RefNumReqired" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="quote_only" Member="QuoteOnly" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="dims_required" Member="DimsRequired" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="dim_factors_economy" Member="DimFactorsEconomy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dim_factors_dom" Member="DimFactorsDom" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dim_factors_intl" Member="DimFactorsIntl" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="date_created" Member="DateCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="last_login" Member="LastLogin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="default_special_services" Member="DefaultSpecialServices" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="user_defaults_info" Member="UserDefaultsInfo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="shipperId" Member="ShipperID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rates_calculator" Member="RatesCalculator" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="freight_amount" Member="FreightAmount" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="default_email" Member="DefaultEmail" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="credit_card_payments" Member="CreditCardPayments" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="view_inventory" Member="VIewInventory" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="inventory" Member="Inventory" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="trackAndConfirmShipper" Member="TrackAndConfirmShipper" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="trackAndConfirmConsignee" Member="TrackAndConfirmConsignee" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="trackAndConfirmBillTo" Member="TrackAndConfirmBillTo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="numberOfLabels" Member="NumberOfLabels" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="allowLTL" Member="AllowLTL" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="allowWarehouse" Member="AllowWarehouse" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="allowReportCharges" Member="AllowReportCharges" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AirportRates" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Govt" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="corporate_id" Member="CorporateID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="corporate_user" Member="CorporateUser" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="company_number" Member="CompanyNumber" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ein_id" Member="EinID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="employee_id" Member="EmployeeID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="User_Order" Member="Orders" ThisKey="UserID" OtherKey="UserID" Type="Order" />
+      <Association Name="User_Consignee" Member="Consignees" ThisKey="UserID" OtherKey="UserID" Type="Consignee" />
+      <Association Name="User_ABCLogisticsShipper" Member="ABCLogisticsShippers" ThisKey="UserID" OtherKey="UserID" Type="ABCLogisticsShipper" />
+      <Association Name="Service_User" Member="Service" ThisKey="DefaultService" OtherKey="ServiceID" Type="Service" IsForeignKey="true" />
+      <Association Name="ABCLogisticsAddress_User" Member="ABCLogisticsAddress" Storage="_address1" ThisKey="Address" OtherKey="AddressID" Type="ABCLogisticsAddress" IsForeignKey="true" />
+      <Association Name="ABCLogisticsAddress_User1" Member="BTAddress" Storage="_ABCLogisticsAddress" ThisKey="BillToAddress" OtherKey="AddressID" Type="ABCLogisticsAddress" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.service" Member="Services">
+    <Type Name="Service">
+      <Column Name="name" Member="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Member="Description" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="service_id" Member="ServiceID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="isDomestic" Member="IsDomestic" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isSpecial" Member="IsSpecial" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="rate_type" Member="RateType" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="Service_Order" Member="Orders" ThisKey="ServiceID" OtherKey="ServiceID" Type="Order" />
+      <Association Name="Service_User" Member="Users" ThisKey="ServiceID" OtherKey="DefaultService" Type="User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.consignee" Member="Consignees">
+    <Type Name="Consignee">
+      <Column Name="consignee_id" Member="ConsigneeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="user_id" Member="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="name" Member="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="company" Member="Company" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="address" Member="Address" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ref_no" Member="RefNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="isAssignedToOrder" Member="IsAssignedToOrder" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="isCreatedFromExistingObject" Member="IsCreatedFromExistingObject" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="isAssignedToAddressBook" Member="IsAssignedToAddressBook" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="email_waybill" Member="EmailWaybill" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="email_for_waybill" Member="EmailForWaybill" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="customer_no" Member="CustomerNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="account_no" Member="AccountNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="track_n_confirm" Member="TrackAndConfirm" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Consignee_Order" Member="Orders" ThisKey="ConsigneeID" OtherKey="ConsigneeID" Type="Order" />
+      <Association Name="User_Consignee" Member="User" ThisKey="UserID" OtherKey="UserID" Type="User" IsForeignKey="true" />
+      <Association Name="ABCLogisticsAddress_Consignee" Member="ABCLogisticsAddress" ThisKey="Address" OtherKey="AddressID" Type="ABCLogisticsAddress" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.shipper" Member="ABCLogisticsShippers">
+    <Type Name="ABCLogisticsShipper">
+      <Column Name="shipper_id" Member="ShipperID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="user_id" Member="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="name" Member="Name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="address" Member="Address" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ref_no" Member="RefNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="contact" Member="Contact" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="company" Member="Company" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="customer_no" Member="CustomerNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="isAssignedToOrder" Member="IsAssignedToOrder" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="isCreatedFromExistingObject" Member="IsCreatedFromExistingObject" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="email_waybill" Member="EmailWaybill" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="email_for_waybill" Member="EmailForWaybill" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="isAssignedToAddressBook" Member="IsAssignedToAddressBook" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="account_no" Member="AccountNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="track_n_confirm" Member="TrackAndConfirm" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="ABCLogisticsShipper_Order" Member="Orders" ThisKey="ShipperID" OtherKey="ShipperID" Type="Order" />
+      <Association Name="User_ABCLogisticsShipper" Member="User" ThisKey="UserID" OtherKey="UserID" Type="User" IsForeignKey="true" />
+      <Association Name="ABCLogisticsAddress_ABCLogisticsShipper" Member="ABCLogisticsAddress" ThisKey="Address" OtherKey="AddressID" Type="ABCLogisticsAddress" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.address" Member="ABCLogisticsAddresses">
+    <Type Name="ABCLogisticsAddress">
+      <Column Name="address_id" Member="AddressID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="street" Member="Street" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="street2" Member="Street2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="city" Member="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="state" Member="State" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="email" Member="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="zip" Member="Zip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="phone" Member="Phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="fax" Member="Fax" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="countryName" Member="CountryName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="ABCLogisticsAddress_User" Member="Users" ThisKey="AddressID" OtherKey="Address" Type="User" />
+      <Association Name="ABCLogisticsAddress_User1" Member="Users1" ThisKey="AddressID" OtherKey="BillToAddress" Type="User" />
+      <Association Name="ABCLogisticsAddress_Consignee" Member="Consignees" ThisKey="AddressID" OtherKey="Address" Type="Consignee" />
+      <Association Name="ABCLogisticsAddress_ABCLogisticsShipper" Member="ABCLogisticsShippers" ThisKey="AddressID" OtherKey="Address" Type="ABCLogisticsShipper" />
+    </Type>
+  </Table>
+  <Table Name="dbo.states" Member="States">
+    <Type Name="State">
+      <Column Name="StateId" Member="StateID" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ShortName" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="Deprecated" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.bill_to" Member="BillTos">
+    <Type Name="BillTo">
+      <Column Name="shortname" Member="Shortname" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="description" Member="Description" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="BillTo_Order" Member="Orders" ThisKey="Shortname" OtherKey="BillTo" Type="Order" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OrdersQueue" Member="OrdersQueues">
+    <Type Name="OrdersQueue">
+      <Column Name="SequenceId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OrderId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ActionId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="IsCompleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MainShipmentXmlName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MainShipmentXml" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DimensionXmlName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DimensionXml" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BookingCustomers" Member="BookingCustomers">
+    <Type Name="BookingCustomer">
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CustomerNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MarkUp" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="DimFactor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FuelRate" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="BookUserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NotificationEmails" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="BookingCustomer_BookingCarrier" Member="BookingCarriers" ThisKey="CustomerID" OtherKey="BookingCustomerID" Type="BookingCarrier" />
+      <Association Name="BookingCustomer_BookingRateState" Member="BookingRateStates" ThisKey="CustomerID" OtherKey="CustomerID" Type="BookingRateState" />
+      <Association Name="BookingCustomer_BookingRateTariff" Member="BookingRateTariffs" ThisKey="CustomerID" OtherKey="CustomerID" Type="BookingRateTariff" />
+      <Association Name="BookingCustomer_BookingRateZoneMat" Member="BookingRateZoneMats" ThisKey="CustomerID" OtherKey="CustomerID" Type="BookingRateZoneMat" />
+      <Association Name="BookingCustomer_BookingRateBeyond" Member="BookingRateBeyonds" ThisKey="CustomerID" OtherKey="CustomerID" Type="BookingRateBeyond" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BookingServices" Member="BookingServices">
+    <Type Name="BookingService">
+      <Column Name="BookingServiceID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ServiceName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ServiceCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CarrierID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ConditionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Priority" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="BookingCarrier_BookingService" Member="BookingCarrier" ThisKey="CarrierID" OtherKey="CarrierID" Type="BookingCarrier" IsForeignKey="true" />
+      <Association Name="BookingCondition_BookingService" Member="BookingCondition" ThisKey="ConditionID" OtherKey="BookingConditionID" Type="BookingCondition" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.GetNextHawb" Method="GetNextHawb">
+    <Parameter Name="serviceId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetNextHawbResult">
+      <Column Name="seqNumber" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

@@ -38,6 +38,9 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,10 +51,162 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Archive\ArchiveLabels.cs" />
+    <Compile Include="Booking\BOBooking.cs" />
+    <Compile Include="Booking\BOCarriers.cs" />
+    <Compile Include="Booking\BOCountries.cs" />
+    <Compile Include="Booking\BOCustomers.cs" />
+    <Compile Include="Booking\BookingDataClasses.designer.cs" />
+    <Compile Include="Booking\BookingRequest.cs" />
+    <Compile Include="Booking\BookingResponse.cs" />
+    <Compile Include="Booking\BORating.cs" />
+    <Compile Include="Booking\BOSBABooking.cs" />
+    <Compile Include="Booking\BOSBARating.cs" />
+    <Compile Include="Booking\BOServices.cs" />
+    <Compile Include="Booking\CommonMessages.cs" />
+    <Compile Include="Booking\ErrorDetails.cs" />
+    <Compile Include="Booking\RatingRequest.cs" />
+    <Compile Include="Booking\RatingResponse.cs" />
+    <Compile Include="Booking\ServiceDetails.cs" />
+    <Compile Include="Booking\TrustAllCertificatePolicy.cs" />
+    <Compile Include="Booking\Validation.cs" />
+    <Compile Include="Booking\XMLProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Reporting\LGConsignee.cs" />
     <Compile Include="Reporting\LGProvider.cs" />
     <Compile Include="Reporting\LGReports.cs" />
+    <Compile Include="Web References\CreatePickupWebReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\CurrencyConverterWebReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\RateServiceWebReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\UPSPickupWebReference\Reference.cs" />
+    <Compile Include="Web References\UPSRateWebReference\Reference.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="C:\Users\Tina\Documents\Projects\ABCLogistics\CarrierIntegration\CurrencyConvertor.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\CurrencyConverterWebReference\</RelPath>
+      <UpdateFromURL>C:\Users\Tina\Documents\Projects\ABCLogistics\CarrierIntegration\CurrencyConvertor.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CarrierIntegrationCore_CurrencyConverterWebReference_CurrencyConvertor</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\Users\Tina\Documents\Projects\ABCLogistics\CarrierIntegration\PickupServiceDefinitions.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\CreatePickupWebReference\</RelPath>
+      <UpdateFromURL>C:\Users\Tina\Documents\Projects\ABCLogistics\CarrierIntegration\PickupServiceDefinitions.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CarrierIntegrationCore_CreatePickupWebReference_PickupService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\Users\Tina\Documents\Projects\ABCLogistics\CarrierIntegration\RateServiceDefinitions.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\RateServiceWebReference\</RelPath>
+      <UpdateFromURL>C:\Users\Tina\Documents\Projects\ABCLogistics\CarrierIntegration\RateServiceDefinitions.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CarrierIntegrationCore_RateServiceWebReference_RateService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Booking\BookingDataClasses.dbml" />
+    <None Include="Booking\BookingDataClasses.dbml.layout" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\CreatePickupWebReference\CancelPickupReply.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CreatePickupWebReference\CreatePickupReply.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CreatePickupWebReference\PickupAvailabilityReply.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CreatePickupWebReference\PickupServiceDefinitions.wsdl" />
+    <None Include="Web References\CreatePickupWebReference\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\CurrencyConverterWebReference\CurrencyConvertor.wsdl" />
+    <None Include="Web References\CurrencyConverterWebReference\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\RateServiceWebReference\RateReply.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\RateServiceWebReference\RateServiceDefinitions.wsdl" />
+    <None Include="Web References\RateServiceWebReference\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\UPSPickupWebReference\common.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\UPSPickupWebReference\Error1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\UPSPickupWebReference\Pickup.wsdl" />
+    <None Include="Web References\UPSPickupWebReference\PickupCancelResponse.datasource" />
+    <None Include="Web References\UPSPickupWebReference\PickupCreationResponse.datasource" />
+    <None Include="Web References\UPSPickupWebReference\PickupPendingStatusResponse.datasource" />
+    <None Include="Web References\UPSPickupWebReference\PickupRateResponse.datasource" />
+    <None Include="Web References\UPSPickupWebReference\PickupWebServiceSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\UPSPickupWebReference\Reference.map" />
+    <None Include="Web References\UPSPickupWebReference\UPSSecurity.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\UPSRateWebReference\common.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\UPSRateWebReference\Error1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\UPSRateWebReference\RateResponse.datasource" />
+    <None Include="Web References\UPSRateWebReference\RateWebServiceSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\UPSRateWebReference\RateWS.wsdl" />
+    <None Include="Web References\UPSRateWebReference\Reference.map" />
+    <None Include="Web References\UPSRateWebReference\UPSSecurity.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
